@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Calendar } from "lucide-react";
+import { motion } from 'framer-motion';
 
 const CtaSection = () => {
   return (
@@ -14,74 +15,136 @@ const CtaSection = () => {
       <div className="absolute -right-32 bottom-1/3 w-80 h-80 rounded-full bg-intelekt-cta/20 blur-3xl opacity-30"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 backdrop-blur-md border border-white/10 rounded-2xl p-10 sm:p-14 shadow-2xl animate-fade-in">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <motion.div 
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            className="bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 backdrop-blur-md border border-white/10 rounded-2xl p-10 sm:p-14 shadow-2xl"
+          >
             <div className="text-center mb-10">
-              <div className="inline-block px-4 py-2 rounded-full bg-intelekt-cta/10 border border-intelekt-cta/30 text-intelekt-cta font-medium text-sm mb-6">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="inline-block px-4 py-2 rounded-full bg-intelekt-cta/10 border border-intelekt-cta/30 text-intelekt-cta font-medium text-sm mb-6"
+              >
                 Get Started Today
-              </div>
+              </motion.div>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              <motion.h2 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+              >
                 Ready to Power Instant Lending?
-              </h2>
+              </motion.h2>
               
-              <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+              <motion.p 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed"
+              >
                 Let's bring agentic AI into your funnel — and start disbursing faster.
-              </p>
+              </motion.p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <Button 
-                  className={cn(
-                    "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
-                    "text-lg px-8 py-7 h-auto font-medium rounded-xl",
-                    "transition-all duration-300 shadow-lg group",
-                    "hover:shadow-intelekt-cta/20 hover:shadow-xl transform hover:-translate-y-1"
-                  )}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
                 >
-                  Talk to Our Team
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Button>
+                  <Button 
+                    size="custom"
+                    className={cn(
+                      "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
+                      "text-lg px-8 font-medium rounded-xl",
+                      "transition-all duration-300 shadow-lg group",
+                      "hover:shadow-intelekt-cta/20 hover:shadow-xl"
+                    )}
+                  >
+                    Talk to Our Team
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </motion.div>
                 
-                <Button 
-                  variant="outline" 
-                  className={cn(
-                    "border-white/20 hover:bg-white/5 text-white",
-                    "text-lg px-8 py-7 h-auto rounded-xl group",
-                    "transition-all duration-300 hover:border-white/30 transform hover:-translate-y-1"
-                  )}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
                 >
-                  <Calendar className="mr-2 h-5 w-5" />
-                  View Case Studies
-                </Button>
+                  <Button 
+                    variant="outline" 
+                    size="custom"
+                    className={cn(
+                      "border-white/20 hover:bg-white/5 text-white",
+                      "text-lg px-8 rounded-xl group",
+                      "transition-all duration-300 hover:border-white/30"
+                    )}
+                  >
+                    <Calendar className="mr-2 h-5 w-5" />
+                    View Case Studies
+                  </Button>
+                </motion.div>
               </div>
             </div>
             
-            <div className="mt-14 pt-8 border-t border-white/10">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="mt-14 pt-8 border-t border-white/10"
+            >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="flex items-center">
-                  <div className="h-12 w-12 rounded-full bg-intelekt-accent/20 flex items-center justify-center mr-4">
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    className="h-12 w-12 rounded-full bg-intelekt-accent/20 flex items-center justify-center mr-4"
+                  >
                     <Calendar className="h-6 w-6 text-intelekt-cta" />
-                  </div>
+                  </motion.div>
                   <div>
                     <p className="text-white font-medium">30-Minute Demo</p>
                     <p className="text-white/60 text-sm">See Intelekt AI in action</p>
                   </div>
                 </div>
                 
-                <Button 
-                  className={cn(
-                    "bg-white/10 hover:bg-white/15 text-white border border-white/20",
-                    "rounded-lg transition-all duration-200 px-6",
-                    "hover:border-white/30 group"
-                  )}
+                <motion.div
+                  whileHover={{ y: -3 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                  Schedule Now
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                  <Button 
+                    size="custom"
+                    className={cn(
+                      "bg-white/10 hover:bg-white/15 text-white border border-white/20",
+                      "rounded-lg transition-all duration-200 px-6",
+                      "hover:border-white/30 group"
+                    )}
+                  >
+                    Schedule Now
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </motion.div>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
