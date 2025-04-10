@@ -4,7 +4,10 @@ import NavBar from '@/components/NavBar';
 import HeroSection from '@/components/HeroSection';
 import CaseStudySection from '@/components/CaseStudySection';
 import FeaturesSection from '@/components/FeaturesSection';
+import IvrEvolutionSection from '@/components/IvrEvolutionSection';
+import AIvsHumanSection from '@/components/AIvsHumanSection';
 import OutcomeMetricsSection from '@/components/OutcomeMetricsSection';
+import ArchitectureSection from '@/components/ArchitectureSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 
@@ -16,7 +19,10 @@ const Index = () => {
         <HeroSection />
         <CaseStudySection />
         <FeaturesSection />
+        <IvrEvolutionSection />
+        <AIvsHumanSection />
         <OutcomeMetricsSection />
+        <ArchitectureSection />
         <CtaSection />
       </main>
       <Footer />
