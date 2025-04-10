@@ -67,7 +67,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden">
+    <section className="relative pt-20 md:pt-28 lg:pt-32 pb-20 md:pb-24 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-intelekt-primary via-intelekt-primary to-intelekt-background z-0"></div>
       
@@ -80,13 +80,13 @@ const HeroSection = () => {
       <div className="absolute -right-32 top-1/3 w-80 h-80 rounded-full bg-intelekt-cta/10 blur-3xl opacity-30"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 lg:gap-12">
           {/* Left content */}
           <motion.div 
             variants={staggerContainer}
             initial="hidden"
             animate="show"
-            className="w-full lg:w-1/2 space-y-8"
+            className="w-full lg:w-1/2 space-y-6 md:space-y-8"
           >
             <motion.div
               variants={fadeInUp} 
@@ -97,27 +97,20 @@ const HeroSection = () => {
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gradient tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold leading-tight text-gradient tracking-tight"
             >
-              Disburse Loans in Minutes, Not Months
+              How FlexiFinance Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
             </motion.h1>
-            
-            <motion.p 
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-white/90 max-w-xl leading-relaxed"
-            >
-              Intelekt AI automates your loan funnel — qualifying leads, handling onboarding, and disbursing with AI agents at 1/10th the cost, deployed in 2 days. Results in 7.
-            </motion.p>
             
             <motion.div 
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-5 pt-6"
+              className="flex flex-col sm:flex-row gap-4 md:gap-5 pt-4 md:pt-6"
             >
               <Button 
                 size="custom"
                 className={cn(
                   "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
-                  "text-lg px-8 font-medium rounded-xl",
+                  "text-lg px-6 md:px-8 font-medium rounded-xl",
                   "transition-all duration-300 shadow-lg",
                   "hover:shadow-intelekt-cta/20 hover:shadow-xl transform hover:-translate-y-1"
                 )}
@@ -130,7 +123,7 @@ const HeroSection = () => {
                 size="custom"
                 className={cn(
                   "border-white/20 hover:bg-white/5 text-white",
-                  "text-lg px-8 rounded-xl",
+                  "text-lg px-6 md:px-8 rounded-xl",
                   "inline-flex items-center gap-3",
                   "transition-all duration-300 hover:border-white/30 transform hover:-translate-y-1"
                 )}
@@ -142,10 +135,10 @@ const HeroSection = () => {
             
             <motion.div 
               variants={fadeInUp}
-              className="pt-10"
+              className="pt-6 md:pt-10"
             >
               <p className="text-sm text-white/70 mb-4">Trusted by digital-first lenders across India</p>
-              <div className="flex flex-wrap gap-8 items-center">
+              <div className="flex flex-wrap gap-6 md:gap-8 items-center">
                 <motion.div 
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -248,7 +241,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2 }}
-                className="absolute -bottom-20 -right-10 w-64 bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 
+                className="absolute -bottom-20 -right-10 md:-right-5 lg:-right-10 w-64 bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 
                           backdrop-blur-md border border-white/10 rounded-xl p-5 shadow-xl 
                           hover:shadow-intelekt-cta/20 transform hover:-translate-y-1 transition-all duration-300"
               >

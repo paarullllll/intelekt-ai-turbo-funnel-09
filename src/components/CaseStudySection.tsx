@@ -1,33 +1,41 @@
 
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
-import { CheckCircle, XCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, XCircle, ArrowRight, Building2 } from "lucide-react";
 
 const CaseStudySection = () => {
   // Define a company name state that could be updated later if needed
   const [companyName] = useState("FlexiFinance");
   
   return (
-    <section id="case-study" className="py-24 bg-intelekt-background relative">
+    <section id="case-study" className="py-16 md:py-20 lg:py-24 bg-intelekt-background relative">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxMjIxQUEiIGZpbGwtb3BhY2l0eT0iMC4wMiI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptMC00aDJ2MmgtMnYtMnptLTQgOGgydjJoLTJ2LTJ6bTIwLTIwaDJ2MmgtMnYtMnptLTIgNGgydjJoLTJ2LTJ6bTQtOGgtMnYyaDJ2LTJ6bTIgMGgydjJoLTJ2LTJ6bS00IDhoMnYyaC0ydi0yem0yLTRoMnYyaC0ydi0yem0yIDhoMnYyaC0ydi0yem0tNCAxMmgydjJoLTJ2LTJ6bTAgOGgydjJoLTJ2LTJ6bS00LTEyaDJ2MmgtMnYtMnptMC04aDJ2MmgtMnYtMnptLTggMTZoMnYyaC0ydi0yem0tOCAwaDJ2MmgtMnYtMnptOC04aDJ2MmgtMnYtMnptLTgtOGgydjJoLTJ2LTJ6bS04IDhoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yen0iLz48L2c+PC9nPjwvc3ZnPg==')]
           opacity-30 z-0"></div>
           
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-block px-4 py-2 rounded-full bg-intelekt-accent/10 border border-intelekt-accent/20 text-sm font-medium text-white/90 mb-5 transform transition-transform hover:scale-105">
-              Customer Success
+
+          {/* About FlexiFinance - Horizontal Card */}
+          <div className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 mb-10 md:mb-16 animate-fade-in shadow-lg">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <div className="flex-shrink-0 bg-intelekt-accent/20 h-16 w-16 rounded-full flex items-center justify-center">
+                <Building2 className="h-8 w-8 text-intelekt-accent" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-3">About {companyName}</h3>
+                <p className="text-white/80 leading-relaxed">
+                  {companyName} is a rapidly growing financial services provider offering personal and business loans across India. 
+                  Known for its customer-first approach, the company constantly seeks intelligent solutions to scale efficiently and reduce operational bottlenecks.
+                </p>
+              </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              How {companyName} Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
-            </h2>
           </div>
 
           {/* Challenge, Solution, Outcome Structure */}
-          <div className="grid gap-12 mb-16">
+          <div className="grid gap-10 md:gap-12 mb-16">
             {/* Challenge Section */}
-            <div className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 backdrop-blur-sm border border-white/10 rounded-xl p-8 animate-fade-in animation-delay-100 shadow-lg">
+            <div className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 animate-fade-in animation-delay-100 shadow-lg">
               <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
                 <span className="bg-intelekt-accent/30 h-10 w-10 rounded-full flex items-center justify-center mr-4 text-white">
                   <span className="text-xl">1</span>
@@ -35,9 +43,9 @@ const CaseStudySection = () => {
                 The Challenge
               </h3>
               
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-5">
-                  <p className="text-white/90 text-lg mb-6">
+                  <p className="text-white/90 text-lg mb-4 md:mb-6">
                     The company faced several challenges:
                   </p>
                   
@@ -96,11 +104,11 @@ const CaseStudySection = () => {
             
             {/* Solution Section */}
             <div className="relative">
-              <div className="absolute left-1/2 -top-10 transform -translate-x-1/2 w-10 h-10 bg-intelekt-background border-2 border-intelekt-accent rounded-full flex items-center justify-center z-10">
-                <ArrowRight className="text-intelekt-accent rotate-90" size={20}/>
+              <div className="absolute left-1/2 -top-8 md:-top-10 transform -translate-x-1/2 w-8 md:w-10 h-8 md:h-10 bg-intelekt-background border-2 border-intelekt-accent rounded-full flex items-center justify-center z-10">
+                <ArrowRight className="text-intelekt-accent rotate-90" size={16} />
               </div>
               
-              <div className="bg-gradient-to-br from-intelekt-accent/20 to-intelekt-primary/40 backdrop-blur-sm border border-intelekt-accent/20 rounded-xl p-8 animate-fade-in animation-delay-200 shadow-lg">
+              <div className="bg-gradient-to-br from-intelekt-accent/20 to-intelekt-primary/40 backdrop-blur-sm border border-intelekt-accent/20 rounded-xl p-6 md:p-8 animate-fade-in animation-delay-200 shadow-lg">
                 <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
                   <span className="bg-intelekt-accent/40 h-10 w-10 rounded-full flex items-center justify-center mr-4 text-white">
                     <span className="text-xl">2</span>
@@ -108,7 +116,7 @@ const CaseStudySection = () => {
                   The Solution
                 </h3>
                 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                   <div className="order-2 md:order-1 bg-intelekt-primary/50 p-6 rounded-lg border border-white/5">
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
@@ -141,8 +149,8 @@ const CaseStudySection = () => {
                     </div>
                   </div>
                   
-                  <div className="order-1 md:order-2 space-y-5">
-                    <p className="text-white/90 text-lg mb-6">
+                  <div className="order-1 md:order-2 space-y-4 md:space-y-5">
+                    <p className="text-white/90 text-lg mb-4 md:mb-6">
                       To address these challenges, {companyName} partnered with Intelekt AI to deploy AI-powered voice agents. The solutions included:
                     </p>
                     
@@ -179,11 +187,11 @@ const CaseStudySection = () => {
             
             {/* Outcome Section */}
             <div className="relative">
-              <div className="absolute left-1/2 -top-10 transform -translate-x-1/2 w-10 h-10 bg-intelekt-background border-2 border-intelekt-accent rounded-full flex items-center justify-center z-10">
-                <ArrowRight className="text-intelekt-accent rotate-90" size={20}/>
+              <div className="absolute left-1/2 -top-8 md:-top-10 transform -translate-x-1/2 w-8 md:w-10 h-8 md:h-10 bg-intelekt-background border-2 border-intelekt-accent rounded-full flex items-center justify-center z-10">
+                <ArrowRight className="text-intelekt-accent rotate-90" size={16} />
               </div>
               
-              <div className="bg-gradient-to-br from-intelekt-cta/20 to-intelekt-primary/40 backdrop-blur-sm border border-intelekt-cta/20 rounded-xl p-8 animate-fade-in animation-delay-300 shadow-lg">
+              <div className="bg-gradient-to-br from-intelekt-cta/20 to-intelekt-primary/40 backdrop-blur-sm border border-intelekt-cta/20 rounded-xl p-6 md:p-8 animate-fade-in animation-delay-300 shadow-lg">
                 <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
                   <span className="bg-intelekt-cta/40 h-10 w-10 rounded-full flex items-center justify-center mr-4 text-white">
                     <span className="text-xl">3</span>
@@ -191,9 +199,9 @@ const CaseStudySection = () => {
                   The Outcome
                 </h3>
                 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-5">
-                    <p className="text-white/90 text-lg mb-6">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+                  <div className="space-y-4 md:space-y-5">
+                    <p className="text-white/90 text-lg mb-4 md:mb-6">
                       The implementation of Intelekt AI's voice agents led to remarkable improvements:
                     </p>
                     
@@ -267,13 +275,13 @@ const CaseStudySection = () => {
           </div>
           
           {/* Testimonial */}
-          <div className="bg-gradient-to-br from-intelekt-primary/50 to-intelekt-primary/30 backdrop-blur-sm border border-white/10 rounded-xl p-8 max-w-3xl mx-auto animate-fade-in animation-delay-800 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex items-start gap-6">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-intelekt-accent to-intelekt-accent/70 flex items-center justify-center text-white text-2xl flex-shrink-0">
+          <div className="bg-gradient-to-br from-intelekt-primary/50 to-intelekt-primary/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 max-w-3xl mx-auto animate-fade-in animation-delay-800 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-intelekt-accent to-intelekt-accent/70 flex items-center justify-center text-white text-xl md:text-2xl flex-shrink-0">
                 "
               </div>
               <div>
-                <p className="text-lg text-white/90 italic mb-5 leading-relaxed">
+                <p className="text-base md:text-lg text-white/90 italic mb-4 md:mb-5 leading-relaxed">
                   Intelekt AI completely transformed our loan qualification process. We've not only reduced costs but also improved customer experience significantly. The speed at which we can now qualify leads and complete KYC has given us a competitive edge.
                 </p>
                 <div className="border-t border-white/10 pt-4">

@@ -47,6 +47,23 @@
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight;
   }
+  
+  /* Add responsive typography */
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  p {
+    @apply text-base md:text-lg;
+  }
 }
 
 @layer utilities {
@@ -68,6 +85,27 @@
   
   .accent-gradient {
     @apply bg-gradient-to-br from-intelekt-accent via-intelekt-accent/90 to-intelekt-accent/50;
+  }
+  
+  /* Responsive spacings */
+  .responsive-container {
+    @apply px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12;
+  }
+  
+  .responsive-mt {
+    @apply mt-4 sm:mt-6 lg:mt-8;
+  }
+  
+  .responsive-mb {
+    @apply mb-4 sm:mb-6 lg:mb-8;
+  }
+  
+  .responsive-py {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+  
+  .responsive-px {
+    @apply px-4 sm:px-6 lg:px-8;
   }
   
   .animation-delay-100 {
@@ -190,8 +228,8 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -234,4 +272,43 @@
 
 .gradient-text-hover:hover {
   @apply text-gradient-cta;
+}
+
+/* Responsive media queries helper classes */
+@media (max-width: 640px) {
+  .mobile-stack {
+    @apply flex-col;
+  }
+  
+  .mobile-full-width {
+    @apply w-full;
+  }
+  
+  .mobile-center {
+    @apply text-center items-center justify-center;
+  }
+  
+  .mobile-hidden {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-stack {
+    @apply flex-col;
+  }
+  
+  .tablet-row {
+    @apply flex-row;
+  }
+  
+  .tablet-hidden {
+    @apply hidden;
+  }
+}
+
+@media (min-width: 1025px) {
+  .desktop-hidden {
+    @apply hidden;
+  }
 }
