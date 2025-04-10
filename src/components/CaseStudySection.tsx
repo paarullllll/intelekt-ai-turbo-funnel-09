@@ -17,11 +17,8 @@ const CaseStudySection = () => {
               Customer Success
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              FlexiFinance Boosted MQL-to-KYC Conversions by 40%
+              How {{CompanyName}} Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
             </h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              See how a leading digital lender transformed their customer acquisition funnel with our AI-powered solution.
-            </p>
           </div>
 
           {/* Challenge, Solution, Outcome Structure */}
@@ -38,7 +35,7 @@ const CaseStudySection = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-5">
                   <p className="text-white/90 text-lg mb-6">
-                    FlexiFinance struggled with a slow, manual loan qualification process that was causing significant drop-offs and high acquisition costs.
+                    The company faced several challenges:
                   </p>
                   
                   <ul className="space-y-4">
@@ -47,7 +44,7 @@ const CaseStudySection = () => {
                         <XCircle size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">Manual qualification taking 2-3 days</p>
+                        <p className="text-white/80">High Turnaround Time (TAT): The manual loan processing system led to delays, affecting customer satisfaction.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
@@ -55,7 +52,7 @@ const CaseStudySection = () => {
                         <XCircle size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">High drop-offs during lengthy KYC</p>
+                        <p className="text-white/80">Low Conversion Rates: A significant drop-off occurred between loan application and disbursal stages.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
@@ -63,15 +60,7 @@ const CaseStudySection = () => {
                         <XCircle size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">₹2,000 customer acquisition cost</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                        <XCircle size={16} />
-                      </span>
-                      <div>
-                        <p className="text-white/80">~5 days turnaround time (TAT)</p>
+                        <p className="text-white/80">Resource Intensive Processes: Heavy reliance on human agents for customer interactions and document verification.</p>
                       </div>
                     </li>
                   </ul>
@@ -121,37 +110,37 @@ const CaseStudySection = () => {
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-intelekt-accent mr-2"></div>
-                        <div className="text-white/90 font-medium">AI Agent Implementation</div>
+                        <div className="text-white/90 font-medium">AI Voice Agents for Customer Interaction</div>
                       </div>
                       <div className="text-white/80 text-sm">
-                        Automated qualification and KYC with conversational AI
+                        Automated initial customer outreach to gather necessary information and answer queries
                       </div>
                     </div>
                     
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-intelekt-cta mr-2"></div>
-                        <div className="text-white/90 font-medium">Streamlined Onboarding</div>
+                        <div className="text-white/90 font-medium">Real-Time Document Verification</div>
                       </div>
                       <div className="text-white/80 text-sm">
-                        Reduced KYC steps from 14 to 5 with smart workflows
+                        Enabled customers to submit documents via voice-guided instructions, with AI agents performing preliminary verification
                       </div>
                     </div>
                     
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg border border-white/5">
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
-                        <div className="text-white/90 font-medium">Real-time Qualification</div>
+                        <div className="text-white/90 font-medium">Personalized Follow-Ups</div>
                       </div>
                       <div className="text-white/80 text-sm">
-                        Instant lead scoring and qualification
+                        AI agents conducted timely follow-ups with applicants, providing updates and assisting with any issues
                       </div>
                     </div>
                   </div>
                   
                   <div className="order-1 md:order-2 space-y-5">
                     <p className="text-white/90 text-lg mb-6">
-                      Intelekt AI deployed a complete solution that automated the entire qualification funnel with agentic AI.
+                      To address these challenges, {{CompanyName}} partnered with Intelekt AI to deploy AI-powered voice agents. The solutions included:
                     </p>
                     
                     <div className="space-y-4">
@@ -202,7 +191,7 @@ const CaseStudySection = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-5">
                     <p className="text-white/90 text-lg mb-6">
-                      FlexiFinance achieved dramatic improvements across all key metrics, transforming their lending process.
+                      The implementation of Intelekt AI's voice agents led to remarkable improvements:
                     </p>
                     
                     <ul className="space-y-4">
@@ -211,7 +200,7 @@ const CaseStudySection = () => {
                           <CheckCircle size={16} />
                         </span>
                         <div>
-                          <p className="text-white/80">1,000 leads qualified in 2 minutes</p>
+                          <p className="text-white/80">Reduced Turnaround Time: Loan disbursal time decreased by 50%, enhancing customer satisfaction.</p>
                         </div>
                       </li>
                       <li className="flex items-start">
@@ -219,7 +208,7 @@ const CaseStudySection = () => {
                           <CheckCircle size={16} />
                         </span>
                         <div>
-                          <p className="text-white/80">35% increase in activation rate</p>
+                          <p className="text-white/80">Increased Conversion Rates: Conversion rates from application to disbursal improved by 35%.</p>
                         </div>
                       </li>
                       <li className="flex items-start">
@@ -227,77 +216,50 @@ const CaseStudySection = () => {
                           <CheckCircle size={16} />
                         </span>
                         <div>
-                          <p className="text-white/80">₹300 CAC vs ₹2,000 previously</p>
-                        </div>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="bg-green-500/20 text-green-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                          <CheckCircle size={16} />
-                        </span>
-                        <div>
-                          <p className="text-white/80">&lt;24 hours turnaround time</p>
+                          <p className="text-white/80">Operational Efficiency: Reduced dependency on human agents allowed staff to focus on more complex tasks, improving overall productivity.</p>
                         </div>
                       </li>
                     </ul>
                   </div>
                   
                   <div className="bg-intelekt-primary/50 p-6 rounded-lg border border-white/5">
-                    <div className="text-white/90">
-                      <div className="mb-4">
-                        <div className="text-lg font-medium mb-2">After Intelekt AI</div>
-                        <div className="w-full bg-intelekt-primary/30 h-3 rounded-full overflow-hidden">
-                          <div className="bg-green-500/60 h-full rounded-full" style={{ width: "65%" }}></div>
-                        </div>
-                        <div className="flex justify-between text-sm mt-1">
-                          <span>High conversion</span>
-                          <span>65%</span>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-6 space-y-3">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm">Cost per acquisition</span>
-                          <span className="font-medium text-green-400">85% reduction</span>
-                        </div>
-                        <div className="w-full h-1.5 bg-intelekt-primary/30 rounded-full overflow-hidden">
-                          <div className="bg-green-500/60 h-full rounded-full" style={{ width: "85%" }}></div>
-                        </div>
-                        
-                        <div className="flex items-center justify-between mt-3">
-                          <span className="text-sm">Processing time</span>
-                          <span className="font-medium text-green-400">80% faster</span>
-                        </div>
-                        <div className="w-full h-1.5 bg-intelekt-primary/30 rounded-full overflow-hidden">
-                          <div className="bg-green-500/60 h-full rounded-full" style={{ width: "80%" }}></div>
-                        </div>
-                      </div>
+                    <h4 className="text-lg font-medium text-white mb-4">Results</h4>
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full divide-y divide-white/10">
+                        <thead>
+                          <tr>
+                            <th className="py-2 text-left text-sm font-medium text-white/70">Metric</th>
+                            <th className="py-2 text-left text-sm font-medium text-white/70">Before Intelekt AI</th>
+                            <th className="py-2 text-left text-sm font-medium text-white/70">After Intelekt AI</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-white/10">
+                          <tr>
+                            <td className="py-3 text-sm text-white/90">Disbursal Rate</td>
+                            <td className="py-3 text-sm text-white/90">2.2%</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">10.5%</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 text-sm text-white/90">Avg. TAT to Disbursal</td>
+                            <td className="py-3 text-sm text-white/90">10–15 days</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">&lt;24 hours</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 text-sm text-white/90">KYC Completion Rate</td>
+                            <td className="py-3 text-sm text-white/90">14%</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">35%+</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 text-sm text-white/90">Cost Per Acquisition (CAC)</td>
+                            <td className="py-3 text-sm text-white/90">₹2,000–₹4,500</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">₹300–₹500</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            <div className="bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center animate-fade-in animation-delay-400 hover:shadow-lg hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-3xl md:text-4xl font-bold text-intelekt-cta mb-2">40%</div>
-              <p className="text-sm text-white/70">MQL-to-KYC Conversion</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center animate-fade-in animation-delay-500 hover:shadow-lg hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-3xl md:text-4xl font-bold text-intelekt-cta mb-2">~2min</div>
-              <p className="text-sm text-white/70">Lead Qualification Time</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center animate-fade-in animation-delay-600 hover:shadow-lg hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-3xl md:text-4xl font-bold text-intelekt-cta mb-2">85%</div>
-              <p className="text-sm text-white/70">Reduction in CAC</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center animate-fade-in animation-delay-700 hover:shadow-lg hover:border-white/20 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-3xl md:text-4xl font-bold text-intelekt-cta mb-2">&lt;24h</div>
-              <p className="text-sm text-white/70">Turnaround Time</p>
             </div>
           </div>
           
@@ -313,7 +275,7 @@ const CaseStudySection = () => {
                 </p>
                 <div className="border-t border-white/10 pt-4">
                   <p className="font-semibold text-white">Rajiv Kumar</p>
-                  <p className="text-sm text-white/70">Chief Digital Officer, FlexiFinance</p>
+                  <p className="text-sm text-white/70">Chief Digital Officer, {{CompanyName}}</p>
                 </div>
               </div>
             </div>

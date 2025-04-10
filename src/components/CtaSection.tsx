@@ -45,7 +45,7 @@ const CtaSection = () => {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
               >
-                Ready to Power Instant Lending?
+                Turn Missed Leads into Opportunities
               </motion.h2>
               
               <motion.p 
