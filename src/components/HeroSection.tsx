@@ -66,7 +66,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-20 md:pt-28 lg:pt-32 pb-20 md:pb-24 overflow-hidden">
+    <section className="relative pt-20 md:pt-28 lg:pt-32 pb-10 md:pb-0 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-intelekt-primary via-intelekt-primary to-intelekt-background z-0"></div>
       
@@ -96,7 +96,7 @@ const HeroSection = () => {
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight text-gradient tracking-tight"
+              className="text-3xl md:text-[42px] font-bold leading-tight text-gradient tracking-normal"
             >
               How Rupeeq increased their MQL to SQL conversions by 80% using Intelekt AI Voice Agents
             </motion.h1>
@@ -134,7 +134,7 @@ const HeroSection = () => {
             
             <motion.div 
               variants={fadeInUp}
-              className="pt-6 md:pt-10"
+              className="pt-6 md:pt-2"
             >
               <p className="text-sm text-white/70 mb-4">Trusted by digital-first lenders across India</p>
               <div className="flex flex-wrap gap-6 md:gap-8 items-center">
@@ -179,7 +179,7 @@ const HeroSection = () => {
                 ease: "easeInOut" 
               }}
               className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 
-                      backdrop-blur-md border border-white/10 rounded-xl p-6 
+                      backdrop-blur-md border border-white/10 rounded-xl py-6 px-8 
                       hover:shadow-intelekt-cta/20 transform hover:-translate-y-1 transition-all duration-300
                       w-full max-w-sm"
             >
@@ -188,7 +188,7 @@ const HeroSection = () => {
                 <div className="w-full h-0.5 bg-gradient-to-r from-intelekt-accent/50 to-intelekt-cta/50"></div>
               </div>
               
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <User className="h-4 w-4 text-intelekt-cta mr-2" />
@@ -197,7 +197,7 @@ const HeroSection = () => {
                   <Input
                     id="name"
                     {...form.register("name", { required: true })}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30 h-12"
                     placeholder="John Doe"
                   />
                 </div>
@@ -210,7 +210,7 @@ const HeroSection = () => {
                   <Input
                     id="phone"
                     {...form.register("phone", { required: true })}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30 h-12"
                     placeholder="+91 98765 43210"
                     type="tel"
                   />
@@ -223,7 +223,7 @@ const HeroSection = () => {
                     "w-full bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
                     "text-sm font-medium h-9 rounded-lg",
                     "transition-all duration-300",
-                    "flex items-center justify-center",
+                    "flex items-center justify-center h-12",
                     isSubmitting && "opacity-70"
                   )}
                 >
@@ -239,7 +239,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 0.6 }}
-          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer" 
+          className="flex flex-col items-center animate-bounce cursor-pointer mt-20" 
           onClick={scrollToNextSection}
         >
           <span className="text-white/60 text-sm mb-2">Scroll to learn more</span>
