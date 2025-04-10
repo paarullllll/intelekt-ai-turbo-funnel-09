@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,7 +61,7 @@ export default {
 					background: '#111111',
 					text: '#FFFFFF',
 					darkText: '#1E1E1E',
-					cta: '#44CDFF',
+					cta: '#3B82F6',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

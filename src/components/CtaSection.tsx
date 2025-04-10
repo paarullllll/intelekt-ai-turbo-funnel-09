@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const CtaSection = () => {
   return (
-    <section className="py-28 bg-intelekt-background relative overflow-hidden">
+    <section className="py-24 bg-intelekt-background relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-intelekt-primary/20 to-intelekt-primary/40"></div>
       
       {/* Accent circles */}
@@ -25,7 +25,7 @@ const CtaSection = () => {
           <motion.div 
             whileHover={{ y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
-            className="bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 backdrop-blur-md border border-white/10 rounded-2xl p-10 sm:p-14 shadow-2xl"
+            className="bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 backdrop-blur-md border border-white/10 rounded-2xl p-8 sm:p-12 shadow-2xl"
           >
             <div className="text-center mb-10">
               <motion.div 
@@ -58,7 +58,7 @@ const CtaSection = () => {
                 Let's bring agentic AI into your funnel — and start disbursing faster.
               </motion.p>
               
-              <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <div className="flex justify-center">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -79,27 +79,6 @@ const CtaSection = () => {
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                >
-                  <Button 
-                    variant="outline" 
-                    size="custom"
-                    className={cn(
-                      "border-white/20 hover:bg-white/5 text-white",
-                      "text-lg px-8 rounded-xl group",
-                      "transition-all duration-300 hover:border-white/30"
-                    )}
-                  >
-                    <Calendar className="mr-2 h-5 w-5" />
-                    View Case Studies
-                  </Button>
-                </motion.div>
               </div>
             </div>
             
@@ -108,7 +87,7 @@ const CtaSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: true }}
-              className="mt-14 pt-8 border-t border-white/10"
+              className="mt-12 pt-8 border-t border-white/10"
             >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="flex items-center">

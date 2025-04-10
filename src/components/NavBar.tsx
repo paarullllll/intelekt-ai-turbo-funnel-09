@@ -44,7 +44,7 @@ const NavBar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/" className="flex items-center group">
-              <img src="/lovable-uploads/3ef42f29-a1d2-4d00-aff5-bfd80740e0b4.png" alt="Intelekt AI" className="h-8 mr-2" />
+              <img src="/lovable-uploads/57d214e7-f5b8-495c-b62d-88db0cd8ef2a.png" alt="Intelekt AI" className="h-8 mr-2" />
             </a>
           </div>
           
