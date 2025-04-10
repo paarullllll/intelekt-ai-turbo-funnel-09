@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from "@/lib/utils";
-import { Check, X } from "lucide-react";
+import { Check, X, Zap, Clock, DollarSign, Target, Rocket } from "lucide-react";
 
 const IvrEvolutionSection = () => {
   const steps = [
@@ -37,6 +37,33 @@ const IvrEvolutionSection = () => {
       borderColor: "border-intelekt-cta/40",
       interaction: "Callers engage in human-like conversations with an AI that handles multiple languages, provides personalized responses, and resolves issues without human intervention.",
       limitations: "Handles outbound and inbound tasks, lead qualification, customer onboarding, and more with fluid, natural conversations, reducing need for human agents."
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: Target,
+      title: "40% More Leads to KYC",
+      description: "Only high-intent applicants move forward",
+      color: "text-intelekt-accent"
+    },
+    {
+      icon: Clock,
+      title: "Processing in Hours, Not Days",
+      description: "Faster conversions with AI follow-ups, cuts wait times",
+      color: "text-intelekt-accent"
+    },
+    {
+      icon: DollarSign,
+      title: "Lower CAC, Higher ROI",
+      description: "No wasted spend on bad leads",
+      color: "text-intelekt-accent"
+    },
+    {
+      icon: Rocket,
+      title: "5X More Loan Disbursals",
+      description: "AI boosts engagement & conversions",
+      color: "text-intelekt-accent"
     }
   ];
 
@@ -117,6 +144,43 @@ const IvrEvolutionSection = () => {
             ))}
           </div>
         </div>
+        
+        {/* Benefits section based on slide */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl font-bold text-white text-center mb-10">
+            With <span className="text-intelekt-cta">Intelekt AI</span> they find & disburse to qualified borrowers,<br/>
+            at 1/10th the cost <span className="text-intelekt-accent">in minutes, not months</span>
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-intelekt-primary/30 border border-white/10 rounded-xl p-6 hover:border-intelekt-cta/30 transition-all duration-300"
+              >
+                <div className="flex items-start mb-4">
+                  <div className="bg-intelekt-accent/10 w-10 h-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <benefit.icon className="h-5 w-5 text-intelekt-accent" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-2">{benefit.title}</h4>
+                    <p className="text-sm text-white/70">{benefit.description}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
         
         {/* Conclusion message */}
         <motion.div
