@@ -98,7 +98,7 @@ const HeroSection = () => {
               variants={fadeInUp}
               className="text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight text-gradient tracking-tight"
             >
-              How FlexiFinance Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
+              How Rupeeq increased their MQL to SQL conversions by 80% using Intelekt AI Voice Agents
             </motion.h1>
             
             <motion.div 

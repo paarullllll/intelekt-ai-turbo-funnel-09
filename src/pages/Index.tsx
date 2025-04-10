@@ -7,7 +7,6 @@ import FeaturesSection from '@/components/FeaturesSection';
 import IvrEvolutionSection from '@/components/IvrEvolutionSection';
 import AIvsHumanSection from '@/components/AIvsHumanSection';
 import OutcomeMetricsSection from '@/components/OutcomeMetricsSection';
-import ArchitectureSection from '@/components/ArchitectureSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 
@@ -19,10 +18,9 @@ const Index = () => {
         <HeroSection />
         <CaseStudySection />
         <FeaturesSection />
+        <OutcomeMetricsSection />
         <IvrEvolutionSection />
         <AIvsHumanSection />
-        <OutcomeMetricsSection />
-        <ArchitectureSection />
         <CtaSection />
       </main>
       <Footer />

@@ -14,7 +14,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-white/70 mb-4 max-w-xs">
-              Agentic AI platform built for lenders to automate loan disbursals.
+              Agentic AI platform built for lenders to automate lending processes.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white/60 hover:text-white transition-colors">

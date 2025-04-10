@@ -46,7 +46,7 @@ const metrics = [
 const OutcomeMetricsSection = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-intelekt-primary/90 to-intelekt-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxMjIxQUEiIGZpbGwtb3BhY2l0eT0iMC4wNCI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptMC00aDJ2MmgtMnYtMnptLTQgOGgydjJoLTJ2LTJ6bTIwLTIwaDJ2MmgtMnYtMnptLTIgNGgydjJoLTJ2LTJ6bTQtOGgtMnYyaDJ2LTJ6bTIgMGgydjJoLTJ2LTJ6bS00IDhoMnYyaC0ydi0yem0yLTRoMnYyaC0ydi0yem0yIDhoMnYyaC0ydi0yem0tNCAxMmgydjJoLTJ2LTJ6bTAgOGgydjJoLTJ2LTJ6bS00LTEyaDJ2MmgtMnYtMnptMC04aDJ2MmgtMnYtMnptLTggMTZoMnYyaC0ydi0yem0tOCAwaDJ2MmgtMnYtMnptOC04aDJ2MmgtMnYtMnptLTgtOGgydjJoLTJ2LTJ6bS04IDhoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yען0iLz48L2c+PC9nPjwvc3ZnPg==')]
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxMjIxQUEiIGZpbGwtb3BhY2l0eT0iMC4wNCI+PHBhdGggZD0iTTM2IDM0djJoLTJ2LTJoMnptMC00aDJ2MmgtMnYtMnptLTQgOGgydjJoLTJ2LTJ6bTIwLTIwaDJ2MmgtMnYtMnptLTIgNGgydjJoLTJ2LTJ6bTQtOGgtMnYyaDJ2LTJ6bTIgMGgydjJoLTJ2LTJ6bS00IDhoMnYyaC0ydi0yem0yLTRoMnYyaC0ydi0yem0yIDhoMnYyaC0ydi0yem0tNCAxMmgydjJoLTJ2LTJ6bTAgOGgydjJoLTJ2LTJ6bS00LTEyaDJ2MmgtMnYtMnptMC04aDJ2MmgtMnYtMnptLTggMTZoMnYyaC0ydi0yem0tOCAwaDJ2MmgtMnYtMnptOC04aDJ2MmgtMnYtMnptLTgtOGgydjJoLTJ2LTJ6bS04IDhoMnYyaC0ydi0yem0wIDhoMnYyaC0ydi0yen0iLz48L2c+PC9nPjwvc3ZnPg==')]
           opacity-20 z-0"></div>
           
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -97,7 +97,7 @@ const OutcomeMetricsSection = () => {
           ))}
         </div>
         
-        {/* Funnel Visualization */}
+        {/* Improved Funnel Visualization */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -106,63 +106,95 @@ const OutcomeMetricsSection = () => {
           className="mt-20 max-w-4xl mx-auto"
         >
           <div className="relative">
-            {/* Funnel Step 1 */}
-            <div className="mb-6">
-              <div className="bg-blue-400/20 border border-blue-400/30 text-white rounded-t-xl p-4 text-center relative">
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80">100%</span>
-                <p className="font-medium">1000 leads generated with Marketing Campaigns</p>
-              </div>
-            </div>
+            <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 via-blue-500 to-intelekt-accent"></div>
             
-            {/* AI Instantly Qualifies */}
-            <div className="absolute right-0 -mt-2 mb-2 px-3 py-1 bg-intelekt-cta/10 border border-intelekt-cta/20 rounded-lg flex items-center">
-              <Zap className="h-4 w-4 text-intelekt-cta mr-1" />
-              <span className="text-sm text-intelekt-cta">AI instantly qualifies all leads</span>
+            {/* Funnel Step 1 */}
+            <div className="relative z-10 mb-14">
+              <div className="flex justify-center">
+                <div className="bg-blue-400/20 border border-blue-400/30 text-white rounded-xl p-5 text-center w-full max-w-2xl relative">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-blue-400 rounded-full text-xs font-medium">
+                    START
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">Marketing Qualified Leads</h3>
+                  <p className="text-white/80">1000 leads generated with marketing campaigns</p>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <span className="text-white/80 text-lg font-semibold">100%</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Processing indicator */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 bg-blue-500/20 border border-blue-500/30 rounded-lg px-4 py-2 flex items-center">
+                <Zap className="h-5 w-5 text-blue-400 mr-2 animate-pulse" />
+                <span className="text-sm text-blue-400">AI instantly processes all leads</span>
+              </div>
             </div>
             
             {/* Funnel Step 2 */}
-            <div className="mb-6 max-w-[85%] mx-auto">
-              <div className="bg-blue-500/20 border border-blue-500/30 text-white rounded-lg p-4 text-center relative">
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80">100%</span>
-                <p className="font-medium">1000 Sales qualified leads within minutes</p>
+            <div className="relative z-10 mb-14">
+              <div className="flex justify-center">
+                <div className="bg-blue-500/20 border border-blue-500/30 text-white rounded-xl p-5 text-center w-full max-w-xl relative">
+                  <h3 className="text-xl font-semibold mb-2">AI Qualification</h3>
+                  <p className="text-white/80">Leads qualified within minutes through intelligent conversation</p>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <span className="text-white/80 text-lg font-semibold">40%</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            {/* Filtered leads */}
-            <div className="absolute right-0 mt-2 mb-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center">
-              <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
-              <span className="text-sm text-green-500">80% of leads filtered & high-intent</span>
+              
+              {/* Filter indicator */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 bg-green-500/20 border border-green-500/30 rounded-lg px-4 py-2 flex items-center">
+                <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                <span className="text-sm text-green-500">60% of leads filtered out</span>
+              </div>
             </div>
             
             {/* Funnel Step 3 */}
-            <div className="mb-6 max-w-[70%] mx-auto">
-              <div className="bg-yellow-400/20 border border-yellow-400/30 text-white rounded-lg p-4 text-center relative">
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80">20%</span>
-                <p className="font-medium">200 at KYC / Documentation</p>
+            <div className="relative z-10 mb-14">
+              <div className="flex justify-center">
+                <div className="bg-intelekt-cta/20 border border-intelekt-cta/30 text-white rounded-xl p-5 text-center w-full max-w-lg relative">
+                  <h3 className="text-xl font-semibold mb-2">KYC & Documentation</h3>
+                  <p className="text-white/80">400 leads complete KYC with AI guidance</p>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <span className="text-white/80 text-lg font-semibold">12%</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Approval indicator */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 bg-intelekt-accent/20 border border-intelekt-accent/30 rounded-lg px-4 py-2 flex items-center">
+                <Target className="h-5 w-5 text-intelekt-accent mr-2" />
+                <span className="text-sm text-intelekt-accent">{">"} 40% more loan approvals</span>
               </div>
             </div>
             
-            {/* More loan approvals */}
-            <div className="bg-intelekt-accent/80 text-center py-3 rounded-lg max-w-[50%] mx-auto mb-8">
-              <div className="flex items-center justify-center">
-                <Target className="h-5 w-5 text-white mr-2" />
-                <span className="text-white font-medium">
-                  {">"} 40% more loan approvals
-                </span>
+            {/* Funnel Step 4 */}
+            <div className="relative z-10">
+              <div className="flex justify-center">
+                <div className="bg-green-500/20 border border-green-500/30 text-white rounded-xl p-5 text-center w-full max-w-md relative">
+                  <h3 className="text-xl font-semibold mb-2">Successful Disbursals</h3>
+                  <p className="text-white/80">120 loans approved and disbursed within 24 hours</p>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
+                    <span className="text-white/80 text-lg font-semibold">12%</span>
+                  </div>
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-green-500 rounded-full text-xs font-medium">
+                    COMPLETE
+                  </div>
+                </div>
               </div>
             </div>
-            
-            {/* CTA Button */}
-            <div className="text-center">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                href="#"
-                className="inline-block py-4 px-8 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300"
-              >
-                AI-powered lending starts here
-              </motion.a>
-            </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="text-center mt-16">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              href="#"
+              className="inline-block py-4 px-8 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300"
+            >
+              AI-powered lending starts here
+            </motion.a>
           </div>
         </motion.div>
         

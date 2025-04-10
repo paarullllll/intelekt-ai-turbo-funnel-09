@@ -1,11 +1,11 @@
 
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
-import { CheckCircle, XCircle, ArrowRight, Building2 } from "lucide-react";
+import { CheckCircle, XCircle, ArrowRight, Building2, Clock, Ban, Users, TrendingDown } from "lucide-react";
 
 const CaseStudySection = () => {
   // Define a company name state that could be updated later if needed
-  const [companyName] = useState("FlexiFinance");
+  const [companyName] = useState("Rupeeq");
   
   return (
     <section id="case-study" className="py-16 md:py-20 lg:py-24 bg-intelekt-background relative">
@@ -16,7 +16,7 @@ const CaseStudySection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-screen-xl mx-auto">
 
-          {/* About FlexiFinance - Horizontal Card */}
+          {/* About Rupeeq - Horizontal Card */}
           <div className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 mb-10 md:mb-16 animate-fade-in shadow-lg">
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-shrink-0 bg-intelekt-accent/20 h-16 w-16 rounded-full flex items-center justify-center">
@@ -25,8 +25,7 @@ const CaseStudySection = () => {
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-3">About {companyName}</h3>
                 <p className="text-white/80 leading-relaxed">
-                  {companyName} is a rapidly growing financial services provider offering personal and business loans across India. 
-                  Known for its customer-first approach, the company constantly seeks intelligent solutions to scale efficiently and reduce operational bottlenecks.
+                  {companyName} is a fast-growing digital lender focused on personal and business loans. With a strong marketing engine generating high volumes of leads every month, the company's challenge was no longer lead generation — it was qualifying the right ones, fast.
                 </p>
               </div>
             </div>
@@ -52,26 +51,34 @@ const CaseStudySection = () => {
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                        <XCircle size={16} />
+                        <Clock size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">High Turnaround Time (TAT): The manual loan processing system led to delays, affecting customer satisfaction.</p>
+                        <p className="text-white/80">🔄 Slow qualification cycles: MQLs waited 1–2 days before receiving a call from the team.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                        <XCircle size={16} />
+                        <Ban size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">Low Conversion Rates: A significant drop-off occurred between loan application and disbursal stages.</p>
+                        <p className="text-white/80">🚫 Low conversion: Only 2% of marketing-qualified leads turned into sales-ready ones.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
-                        <XCircle size={16} />
+                        <Users size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">Resource Intensive Processes: Heavy reliance on human agents for customer interactions and document verification.</p>
+                        <p className="text-white/80">🧍‍♂️ Heavy dependence on SDRs: Human teams struggled to follow up at scale, leading to inconsistent conversations and missed opportunities.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                        <TrendingDown size={16} />
+                      </span>
+                      <div>
+                        <p className="text-white/80">📉 Wasted marketing spend: High-intent leads were lost due to slow response time and no-show follow-ups.</p>
                       </div>
                     </li>
                   </ul>
@@ -82,11 +89,11 @@ const CaseStudySection = () => {
                     <div className="mb-4">
                       <div className="text-lg font-medium mb-2">Before Intelekt AI</div>
                       <div className="w-full bg-intelekt-primary/30 h-3 rounded-full overflow-hidden">
-                        <div className="bg-red-500/60 h-full rounded-full" style={{ width: "25%" }}></div>
+                        <div className="bg-red-500/60 h-full rounded-full" style={{ width: "2%" }}></div>
                       </div>
                       <div className="flex justify-between text-sm mt-1">
-                        <span>Low conversion</span>
-                        <span>25%</span>
+                        <span>MQL to SQL Conversion</span>
+                        <span>2%</span>
                       </div>
                     </div>
                     
@@ -121,62 +128,73 @@ const CaseStudySection = () => {
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-intelekt-accent mr-2"></div>
-                        <div className="text-white/90 font-medium">AI Voice Agents for Customer Interaction</div>
-                      </div>
-                      <div className="text-white/80 text-sm">
-                        Automated initial customer outreach to gather necessary information and answer queries
+                        <div className="text-white/90 font-medium">Called every MQL within minutes of form fill</div>
                       </div>
                     </div>
                     
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-intelekt-cta mr-2"></div>
-                        <div className="text-white/90 font-medium">Real-Time Document Verification</div>
+                        <div className="text-white/90 font-medium">Verified eligibility and interest through a natural language conversation</div>
                       </div>
-                      <div className="text-white/80 text-sm">
-                        Enabled customers to submit documents via voice-guided instructions, with AI agents performing preliminary verification
+                    </div>
+                    
+                    <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
+                      <div className="flex items-center mb-3">
+                        <div className="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                        <div className="text-white/90 font-medium">Filtered out cold leads, pushing only SQLs to the sales team</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
+                      <div className="flex items-center mb-3">
+                        <div className="h-3 w-3 rounded-full bg-blue-500 mr-2"></div>
+                        <div className="text-white/90 font-medium">Logged transcripts, summaries, and intent scores back to CRM</div>
                       </div>
                     </div>
                     
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg border border-white/5">
                       <div className="flex items-center mb-3">
-                        <div className="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
-                        <div className="text-white/90 font-medium">Personalized Follow-Ups</div>
-                      </div>
-                      <div className="text-white/80 text-sm">
-                        AI agents conducted timely follow-ups with applicants, providing updates and assisting with any issues
+                        <div className="h-3 w-3 rounded-full bg-purple-500 mr-2"></div>
+                        <div className="text-white/90 font-medium">Created personalized follow-up rules based on lead behavior</div>
                       </div>
                     </div>
                   </div>
                   
                   <div className="order-1 md:order-2 space-y-4 md:space-y-5">
                     <p className="text-white/90 text-lg mb-4 md:mb-6">
-                      To address these challenges, {companyName} partnered with Intelekt AI to deploy AI-powered voice agents. The solutions included:
+                      To address these challenges, {companyName} partnered with Intelekt AI to deploy AI-powered voice agents:
                     </p>
                     
                     <div className="space-y-4">
                       <div className="flex items-start">
                         <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">1</span>
                         <div>
-                          <p className="text-white/80">AI-powered qualification of 1,000 leads in 2 minutes</p>
+                          <p className="text-white/80">Immediate outreach to all new leads</p>
                         </div>
                       </div>
                       <div className="flex items-start">
                         <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">2</span>
                         <div>
-                          <p className="text-white/80">Automated KYC with conversational AI interface</p>
+                          <p className="text-white/80">Personalized qualification through natural conversation</p>
                         </div>
                       </div>
                       <div className="flex items-start">
                         <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">3</span>
                         <div>
-                          <p className="text-white/80">Integration with existing CRM and loan management systems</p>
+                          <p className="text-white/80">Intelligent lead scoring and categorization</p>
                         </div>
                       </div>
                       <div className="flex items-start">
                         <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">4</span>
                         <div>
-                          <p className="text-white/80">Deployment completed in under 7 days</p>
+                          <p className="text-white/80">Seamless CRM integration for team handoffs</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">5</span>
+                        <div>
+                          <p className="text-white/80">Deployment completed in under 3 days</p>
                         </div>
                       </div>
                     </div>
@@ -211,7 +229,7 @@ const CaseStudySection = () => {
                           <CheckCircle size={16} />
                         </span>
                         <div>
-                          <p className="text-white/80">Reduced Turnaround Time: Loan disbursal time decreased by 50%, enhancing customer satisfaction.</p>
+                          <p className="text-white/80">6x increase in MQL to SQL conversion rate, from 2% to 12%</p>
                         </div>
                       </li>
                       <li className="flex items-start">
@@ -219,7 +237,7 @@ const CaseStudySection = () => {
                           <CheckCircle size={16} />
                         </span>
                         <div>
-                          <p className="text-white/80">Increased Conversion Rates: Conversion rates from application to disbursal improved by 35%.</p>
+                          <p className="text-white/80">Reduced response time from 24-48 hours to under 5 minutes</p>
                         </div>
                       </li>
                       <li className="flex items-start">
@@ -227,7 +245,15 @@ const CaseStudySection = () => {
                           <CheckCircle size={16} />
                         </span>
                         <div>
-                          <p className="text-white/80">Operational Efficiency: Reduced dependency on human agents allowed staff to focus on more complex tasks, improving overall productivity.</p>
+                          <p className="text-white/80">100% follow-up coverage across all leads, eliminating missed opportunities</p>
+                        </div>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="bg-green-500/20 text-green-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                          <CheckCircle size={16} />
+                        </span>
+                        <div>
+                          <p className="text-white/80">Significant reduction in customer acquisition costs (CAC), from ₹2,000-₹4,000 to ₹300-₹500</p>
                         </div>
                       </li>
                     </ul>
@@ -240,29 +266,34 @@ const CaseStudySection = () => {
                         <thead>
                           <tr>
                             <th className="py-2 text-left text-sm font-medium text-white/70">Metric</th>
-                            <th className="py-2 text-left text-sm font-medium text-white/70">Before Intelekt AI</th>
-                            <th className="py-2 text-left text-sm font-medium text-white/70">After Intelekt AI</th>
+                            <th className="py-2 text-left text-sm font-medium text-white/70">Before Intelekt</th>
+                            <th className="py-2 text-left text-sm font-medium text-white/70">After Intelekt</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-white/10">
                           <tr>
-                            <td className="py-3 text-sm text-white/90">Disbursal Rate</td>
-                            <td className="py-3 text-sm text-white/90">2.2%</td>
-                            <td className="py-3 text-sm text-green-400 font-medium">10.5%</td>
+                            <td className="py-3 text-sm text-white/90">MQL to SQL Conversion</td>
+                            <td className="py-3 text-sm text-white/90">2%</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">12%</td>
                           </tr>
                           <tr>
-                            <td className="py-3 text-sm text-white/90">Avg. TAT to Disbursal</td>
-                            <td className="py-3 text-sm text-white/90">10–15 days</td>
-                            <td className="py-3 text-sm text-green-400 font-medium">&lt;24 hours</td>
+                            <td className="py-3 text-sm text-white/90">Avg. Response Time</td>
+                            <td className="py-3 text-sm text-white/90">24–48 hrs</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">&lt;5 minutes</td>
                           </tr>
                           <tr>
-                            <td className="py-3 text-sm text-white/90">KYC Completion Rate</td>
-                            <td className="py-3 text-sm text-white/90">14%</td>
-                            <td className="py-3 text-sm text-green-400 font-medium">35%+</td>
+                            <td className="py-3 text-sm text-white/90">Manual SDR Touchpoints</td>
+                            <td className="py-3 text-sm text-white/90">6+</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">0</td>
                           </tr>
                           <tr>
-                            <td className="py-3 text-sm text-white/90">Cost Per Acquisition (CAC)</td>
-                            <td className="py-3 text-sm text-white/90">₹2,000–₹4,500</td>
+                            <td className="py-3 text-sm text-white/90">Follow-Up Coverage</td>
+                            <td className="py-3 text-sm text-white/90">~35%</td>
+                            <td className="py-3 text-sm text-green-400 font-medium">100%</td>
+                          </tr>
+                          <tr>
+                            <td className="py-3 text-sm text-white/90">CAC</td>
+                            <td className="py-3 text-sm text-white/90">₹2,000–₹4,000</td>
                             <td className="py-3 text-sm text-green-400 font-medium">₹300–₹500</td>
                           </tr>
                         </tbody>
@@ -282,7 +313,7 @@ const CaseStudySection = () => {
               </div>
               <div>
                 <p className="text-base md:text-lg text-white/90 italic mb-4 md:mb-5 leading-relaxed">
-                  Intelekt AI completely transformed our loan qualification process. We've not only reduced costs but also improved customer experience significantly. The speed at which we can now qualify leads and complete KYC has given us a competitive edge.
+                  Intelekt AI helped us qualify leads at scale — faster than any human team could. We now focus on closing deals, not chasing dead ends.
                 </p>
                 <div className="border-t border-white/10 pt-4">
                   <p className="font-semibold text-white">Rajiv Kumar</p>
