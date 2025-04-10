@@ -42,7 +42,6 @@ const HeroSection = () => {
     if (caseStudySection) {
       caseStudySection.scrollIntoView({ behavior: 'smooth' });
     }
-    setMobileMenuOpen(false);
   };
 
   const staggerContainer = {
@@ -86,7 +85,7 @@ const HeroSection = () => {
             variants={staggerContainer}
             initial="hidden"
             animate="show"
-            className="w-full lg:w-1/2 space-y-6 md:space-y-8"
+            className="w-full lg:w-3/5 space-y-6 md:space-y-8"
           >
             <motion.div
               variants={fadeInUp} 
@@ -97,7 +96,7 @@ const HeroSection = () => {
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-[40px] font-bold leading-tight text-gradient tracking-tight"
+              className="text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight text-gradient tracking-tight"
             >
               How FlexiFinance Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
             </motion.h1>
@@ -163,7 +162,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="w-full lg:w-2/6 flex justify-center lg:justify-end relative"
+            className="w-full lg:w-2/5 flex justify-center lg:justify-end relative"
           >
             <motion.div
               animate={{ 
