@@ -1,9 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
 import { CheckCircle, XCircle, ArrowRight } from "lucide-react";
 
 const CaseStudySection = () => {
+  // Define a company name state that could be updated later if needed
+  const [companyName] = useState("FlexiFinance");
+  
   return (
     <section id="case-study" className="py-24 bg-intelekt-background relative">
       {/* Subtle background pattern */}
@@ -17,7 +20,7 @@ const CaseStudySection = () => {
               Customer Success
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              How {{CompanyName}} Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
+              How {companyName} Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
             </h2>
           </div>
 
@@ -140,7 +143,7 @@ const CaseStudySection = () => {
                   
                   <div className="order-1 md:order-2 space-y-5">
                     <p className="text-white/90 text-lg mb-6">
-                      To address these challenges, {{CompanyName}} partnered with Intelekt AI to deploy AI-powered voice agents. The solutions included:
+                      To address these challenges, {companyName} partnered with Intelekt AI to deploy AI-powered voice agents. The solutions included:
                     </p>
                     
                     <div className="space-y-4">
@@ -275,7 +278,7 @@ const CaseStudySection = () => {
                 </p>
                 <div className="border-t border-white/10 pt-4">
                   <p className="font-semibold text-white">Rajiv Kumar</p>
-                  <p className="text-sm text-white/70">Chief Digital Officer, {{CompanyName}}</p>
+                  <p className="text-sm text-white/70">Chief Digital Officer, {companyName}</p>
                 </div>
               </div>
             </div>
