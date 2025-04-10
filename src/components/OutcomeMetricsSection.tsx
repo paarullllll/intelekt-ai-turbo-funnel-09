@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from "@/lib/utils";
 import { motion } from 'framer-motion';
@@ -103,15 +102,16 @@ const OutcomeMetricsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-20 max-w-4xl mx-auto"
+          className="mt-20 max-w-3xl mx-auto"
         >
           <div className="relative">
-            <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 via-blue-500 to-intelekt-accent"></div>
+            {/* Background line */}
+            <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 via-blue-500 to-intelekt-accent -z-10"></div>
             
             {/* Funnel Step 1 */}
-            <div className="relative z-10 mb-14">
+            <div className="relative z-10 mb-16">
               <div className="flex justify-center">
-                <div className="bg-blue-400/20 border border-blue-400/30 text-white rounded-xl p-5 text-center w-full max-w-2xl relative">
+                <div className="bg-blue-400/20 border border-blue-400/30 text-white rounded-xl p-5 text-center w-full max-w-lg relative">
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-blue-400 rounded-full text-xs font-medium">
                     START
                   </div>
@@ -131,9 +131,9 @@ const OutcomeMetricsSection = () => {
             </div>
             
             {/* Funnel Step 2 */}
-            <div className="relative z-10 mb-14">
+            <div className="relative z-10 mb-16">
               <div className="flex justify-center">
-                <div className="bg-blue-500/20 border border-blue-500/30 text-white rounded-xl p-5 text-center w-full max-w-xl relative">
+                <div className="bg-blue-500/20 border border-blue-500/30 text-white rounded-xl p-5 text-center w-full max-w-md relative">
                   <h3 className="text-xl font-semibold mb-2">AI Qualification</h3>
                   <p className="text-white/80">Leads qualified within minutes through intelligent conversation</p>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
@@ -150,34 +150,15 @@ const OutcomeMetricsSection = () => {
             </div>
             
             {/* Funnel Step 3 */}
-            <div className="relative z-10 mb-14">
+            <div className="relative z-10">
               <div className="flex justify-center">
-                <div className="bg-intelekt-cta/20 border border-intelekt-cta/30 text-white rounded-xl p-5 text-center w-full max-w-lg relative">
+                <div className="bg-intelekt-cta/20 border border-intelekt-cta/30 text-white rounded-xl p-5 text-center w-full max-w-sm relative">
                   <h3 className="text-xl font-semibold mb-2">KYC & Documentation</h3>
                   <p className="text-white/80">400 leads complete KYC with AI guidance</p>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
                     <span className="text-white/80 text-lg font-semibold">12%</span>
                   </div>
-                </div>
-              </div>
-              
-              {/* Approval indicator */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-8 bg-intelekt-accent/20 border border-intelekt-accent/30 rounded-lg px-4 py-2 flex items-center">
-                <Target className="h-5 w-5 text-intelekt-accent mr-2" />
-                <span className="text-sm text-intelekt-accent">{">"} 40% more loan approvals</span>
-              </div>
-            </div>
-            
-            {/* Funnel Step 4 */}
-            <div className="relative z-10">
-              <div className="flex justify-center">
-                <div className="bg-green-500/20 border border-green-500/30 text-white rounded-xl p-5 text-center w-full max-w-md relative">
-                  <h3 className="text-xl font-semibold mb-2">Successful Disbursals</h3>
-                  <p className="text-white/80">120 loans approved and disbursed within 24 hours</p>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center">
-                    <span className="text-white/80 text-lg font-semibold">12%</span>
-                  </div>
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-green-500 rounded-full text-xs font-medium">
+                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 px-4 py-1 bg-intelekt-accent rounded-full text-xs font-medium">
                     COMPLETE
                   </div>
                 </div>

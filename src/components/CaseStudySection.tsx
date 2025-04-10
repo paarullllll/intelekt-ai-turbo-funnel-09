@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { cn } from "@/lib/utils";
-import { CheckCircle, XCircle, ArrowRight, Building2, Clock, Ban, Users, TrendingDown } from "lucide-react";
+import { CheckCircle, ArrowRight, Building2, Clock, Ban, Users, TrendingDown } from "lucide-react";
 
 const CaseStudySection = () => {
   // Define a company name state that could be updated later if needed
@@ -48,37 +47,41 @@ const CaseStudySection = () => {
                     The company faced several challenges:
                   </p>
                   
-                  <ul className="space-y-4">
+                  <ul className="space-y-5">
                     <li className="flex items-start">
-                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-4">
                         <Clock size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">🔄 Slow qualification cycles: MQLs waited 1–2 days before receiving a call from the team.</p>
+                        <p className="text-white/90 font-medium">Slow qualification cycles</p>
+                        <p className="text-white/80">MQLs waited 1–2 days before receiving a call from the team.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-4">
                         <Ban size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">🚫 Low conversion: Only 2% of marketing-qualified leads turned into sales-ready ones.</p>
+                        <p className="text-white/90 font-medium">Low conversion</p>
+                        <p className="text-white/80">Only 2% of marketing-qualified leads turned into sales-ready ones.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-4">
                         <Users size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">🧍‍♂️ Heavy dependence on SDRs: Human teams struggled to follow up at scale, leading to inconsistent conversations and missed opportunities.</p>
+                        <p className="text-white/90 font-medium">Heavy dependence on SDRs</p>
+                        <p className="text-white/80">Human teams struggled to follow up at scale, leading to inconsistent conversations and missed opportunities.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">
+                      <span className="bg-red-500/20 text-red-400 h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-4">
                         <TrendingDown size={16} />
                       </span>
                       <div>
-                        <p className="text-white/80">📉 Wasted marketing spend: High-intent leads were lost due to slow response time and no-show follow-ups.</p>
+                        <p className="text-white/90 font-medium">Wasted marketing spend</p>
+                        <p className="text-white/80">High-intent leads were lost due to slow response time and no-show follow-ups.</p>
                       </div>
                     </li>
                   </ul>
@@ -124,7 +127,46 @@ const CaseStudySection = () => {
                 </h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                  <div className="order-2 md:order-1 bg-intelekt-primary/50 p-6 rounded-lg border border-white/5">
+                  <div className="space-y-4 md:space-y-5">
+                    <p className="text-white/90 text-lg mb-4 md:mb-6">
+                      To address these challenges, {companyName} partnered with Intelekt AI to deploy AI-powered voice agents:
+                    </p>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">1</span>
+                        <div>
+                          <p className="text-white/80">Immediate outreach to all new leads</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">2</span>
+                        <div>
+                          <p className="text-white/80">Intelligent lead scoring and categorization</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">3</span>
+                        <div>
+                          <p className="text-white/80">Personalized qualification through natural conversation</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">4</span>
+                        <div>
+                          <p className="text-white/80">Seamless CRM integration for team handoffs</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">5</span>
+                        <div>
+                          <p className="text-white/80">Deployment completed in under 3 days</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-intelekt-primary/50 p-6 rounded-lg border border-white/5">
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-intelekt-accent mr-2"></div>
@@ -157,45 +199,6 @@ const CaseStudySection = () => {
                       <div className="flex items-center mb-3">
                         <div className="h-3 w-3 rounded-full bg-purple-500 mr-2"></div>
                         <div className="text-white/90 font-medium">Created personalized follow-up rules based on lead behavior</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="order-1 md:order-2 space-y-4 md:space-y-5">
-                    <p className="text-white/90 text-lg mb-4 md:mb-6">
-                      To address these challenges, {companyName} partnered with Intelekt AI to deploy AI-powered voice agents:
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start">
-                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">1</span>
-                        <div>
-                          <p className="text-white/80">Immediate outreach to all new leads</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">2</span>
-                        <div>
-                          <p className="text-white/80">Personalized qualification through natural conversation</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">3</span>
-                        <div>
-                          <p className="text-white/80">Intelligent lead scoring and categorization</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">4</span>
-                        <div>
-                          <p className="text-white/80">Seamless CRM integration for team handoffs</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start">
-                        <span className="bg-intelekt-accent text-white h-6 w-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 mr-3">5</span>
-                        <div>
-                          <p className="text-white/80">Deployment completed in under 3 days</p>
-                        </div>
                       </div>
                     </div>
                   </div>

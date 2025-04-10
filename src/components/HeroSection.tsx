@@ -89,9 +89,9 @@ const HeroSection = () => {
           >
             <motion.div
               variants={fadeInUp} 
-              className="inline-block px-4 py-2 rounded-full bg-intelekt-accent/10 border border-intelekt-accent/20 text-sm font-medium text-white/90 mb-2 transform transition-transform hover:scale-105"
+              className="inline-block px-6 py-3 rounded-full bg-intelekt-accent/20 border border-intelekt-accent/30 text-xl font-medium text-white mb-2 transform transition-transform hover:scale-105"
             >
-              Deployed in 2 days. Results in 7.
+              Deployed in a day, results in 7.
             </motion.div>
             
             <motion.h1 
