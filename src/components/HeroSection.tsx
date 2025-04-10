@@ -1,11 +1,43 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
-import { Play, ChevronDown } from "lucide-react";
+import { Play, ChevronDown, Phone, User } from "lucide-react";
 import { motion } from 'framer-motion';
+import { useForm } from "react-hook-form";
+import { toast } from "@/hooks/use-toast";
+
+type FormValues = {
+  name: string;
+  phone: string;
+};
 
 const HeroSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<FormValues>({
+    defaultValues: {
+      name: "",
+      phone: "",
+    },
+  });
+
+  const onSubmit = (data: FormValues) => {
+    setIsSubmitting(true);
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Demo Requested",
+        description: `Thanks ${data.name}, we'll call you at ${data.phone} to schedule your demo.`,
+      });
+      form.reset();
+    }, 1500);
+  };
+
   const scrollToNextSection = () => {
     const caseStudySection = document.getElementById('case-study');
     if (caseStudySection) {
@@ -133,15 +165,17 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
           
-          {/* Right content - Animated mockup */}
+          {/* Right content - Animated mockup with interactive card */}
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="w-full lg:w-1/2 flex justify-center lg:justify-end"
+            className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
           >
             <div className="relative w-full max-w-md">
               <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-intelekt-accent/30 to-intelekt-cta/10 blur-3xl opacity-20 animate-pulse-soft"></div>
+              
+              {/* AI Agent Chat UI */}
               <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
@@ -207,6 +241,64 @@ const HeroSection = () => {
                     ></motion.div>
                   </div>
                 </div>
+              </motion.div>
+              
+              {/* Interactive Demo Request Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2 }}
+                className="absolute -bottom-20 -right-10 w-64 bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 
+                          backdrop-blur-md border border-white/10 rounded-xl p-5 shadow-xl 
+                          hover:shadow-intelekt-cta/20 transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="mb-3">
+                  <h3 className="text-lg font-semibold text-white mb-2">See our AI voice agent in action</h3>
+                  <div className="w-full h-0.5 bg-gradient-to-r from-intelekt-accent/50 to-intelekt-cta/50"></div>
+                </div>
+                
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <User className="h-4 w-4 text-intelekt-cta mr-2" />
+                      <Label htmlFor="name" className="text-white/90 text-sm">Your Name</Label>
+                    </div>
+                    <Input
+                      id="name"
+                      {...form.register("name", { required: true })}
+                      className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <Phone className="h-4 w-4 text-intelekt-cta mr-2" />
+                      <Label htmlFor="phone" className="text-white/90 text-sm">Phone Number</Label>
+                    </div>
+                    <Input
+                      id="phone"
+                      {...form.register("phone", { required: true })}
+                      className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
+                      placeholder="+91 98765 43210"
+                      type="tel"
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={cn(
+                      "w-full bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
+                      "text-sm font-medium h-9 rounded-lg",
+                      "transition-all duration-300",
+                      "flex items-center justify-center",
+                      isSubmitting && "opacity-70"
+                    )}
+                  >
+                    {isSubmitting ? "Submitting..." : "Request Demo Call"}
+                  </Button>
+                </form>
               </motion.div>
             </div>
           </motion.div>
