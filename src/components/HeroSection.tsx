@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
 import { Play, ChevronDown, Phone, User } from "lucide-react";
 import { motion } from 'framer-motion';
@@ -86,7 +85,7 @@ const HeroSection = () => {
             variants={staggerContainer}
             initial="hidden"
             animate="show"
-            className="w-full lg:w-1/2 space-y-6 md:space-y-8"
+            className="w-full lg:w-3/5 space-y-6 md:space-y-8"
           >
             <motion.div
               variants={fadeInUp} 
@@ -97,7 +96,7 @@ const HeroSection = () => {
             
             <motion.h1 
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold leading-tight text-gradient tracking-tight"
+              className="text-3xl sm:text-4xl md:text-[44px] font-bold leading-tight text-gradient tracking-tight"
             >
               How FlexiFinance Doubled Their Loan Conversions by 60% Using Intelekt AI Voice Agents
             </motion.h1>
@@ -158,142 +157,80 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
           
-          {/* Right content - Animated mockup with interactive card */}
+          {/* Right content - Interactive card only */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
+            className="w-full lg:w-2/5 flex justify-center lg:justify-end relative"
           >
-            <div className="relative w-full max-w-md">
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-intelekt-accent/30 to-intelekt-cta/10 blur-3xl opacity-20 animate-pulse-soft"></div>
+            <motion.div
+              animate={{ 
+                y: [0, -15, 0],
+                boxShadow: [
+                  "0 10px 30px rgba(18, 33, 170, 0.2)",
+                  "0 20px 40px rgba(18, 33, 170, 0.4)",
+                  "0 10px 30px rgba(18, 33, 170, 0.2)"
+                ]
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 6, 
+                ease: "easeInOut" 
+              }}
+              className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 
+                      backdrop-blur-md border border-white/10 rounded-xl p-6 
+                      hover:shadow-intelekt-cta/20 transform hover:-translate-y-1 transition-all duration-300
+                      w-full max-w-sm"
+            >
+              <div className="mb-4">
+                <h3 className="text-xl font-semibold text-white mb-2">See our AI voice agent in action</h3>
+                <div className="w-full h-0.5 bg-gradient-to-r from-intelekt-accent/50 to-intelekt-cta/50"></div>
+              </div>
               
-              {/* AI Agent Chat UI */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="relative bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 backdrop-blur border border-white/10 rounded-xl overflow-hidden shadow-2xl"
-              >
-                <div className="bg-intelekt-primary/90 border-b border-white/10 p-4 flex items-center justify-between">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <User className="h-4 w-4 text-intelekt-cta mr-2" />
+                    <Label htmlFor="name" className="text-white/90 text-sm">Your Name</Label>
                   </div>
-                  <div className="text-sm font-medium text-white/90">Intelekt AI Agent</div>
-                </div>
-                <div className="p-6 space-y-4">
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-intelekt-accent to-intelekt-accent/80 flex items-center justify-center text-white text-sm shadow-md">AI</div>
-                    <div className="bg-white/10 rounded-lg rounded-tl-none p-4 text-sm text-white/90">
-                      Hello! I'm your loan assistant. I can help qualify you for a personal loan in under 2 minutes. Would you like to proceed?
-                    </div>
-                  </motion.div>
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.2 }}
-                    className="flex items-start gap-3 justify-end"
-                  >
-                    <div className="bg-intelekt-accent/20 rounded-lg rounded-tr-none p-4 text-sm text-white/90">
-                      Yes, I'm looking for a personal loan of ₹2 lakhs.
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-gray-600 flex items-center justify-center text-white text-sm shadow-md">U</div>
-                  </motion.div>
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.6 }}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-intelekt-accent to-intelekt-accent/80 flex items-center justify-center text-white text-sm shadow-md">AI</div>
-                    <div className="bg-white/10 rounded-lg rounded-tl-none p-4 text-sm text-white/90">
-                      Great! I'll need a few details to check your eligibility. What's your monthly income?
-                    </div>
-                  </motion.div>
-                  <div className="flex items-center gap-2 mt-4">
-                    <motion.div 
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ repeat: Infinity, duration: 1.5 }}
-                      className="h-1.5 w-1.5 rounded-full bg-white/70"
-                    ></motion.div>
-                    <motion.div 
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ repeat: Infinity, duration: 1.5, delay: 0.2 }}
-                      className="h-1.5 w-1.5 rounded-full bg-white/70"
-                    ></motion.div>
-                    <motion.div 
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ repeat: Infinity, duration: 1.5, delay: 0.4 }}
-                      className="h-1.5 w-1.5 rounded-full bg-white/70"
-                    ></motion.div>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Interactive Demo Request Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 2 }}
-                className="absolute -bottom-20 -right-10 md:-right-5 lg:-right-10 w-64 bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/70 
-                          backdrop-blur-md border border-white/10 rounded-xl p-5 shadow-xl 
-                          hover:shadow-intelekt-cta/20 transform hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="mb-3">
-                  <h3 className="text-lg font-semibold text-white mb-2">See our AI voice agent in action</h3>
-                  <div className="w-full h-0.5 bg-gradient-to-r from-intelekt-accent/50 to-intelekt-cta/50"></div>
+                  <Input
+                    id="name"
+                    {...form.register("name", { required: true })}
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
+                    placeholder="John Doe"
+                  />
                 </div>
                 
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <User className="h-4 w-4 text-intelekt-cta mr-2" />
-                      <Label htmlFor="name" className="text-white/90 text-sm">Your Name</Label>
-                    </div>
-                    <Input
-                      id="name"
-                      {...form.register("name", { required: true })}
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
-                      placeholder="John Doe"
-                    />
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <Phone className="h-4 w-4 text-intelekt-cta mr-2" />
+                    <Label htmlFor="phone" className="text-white/90 text-sm">Phone Number</Label>
                   </div>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 text-intelekt-cta mr-2" />
-                      <Label htmlFor="phone" className="text-white/90 text-sm">Phone Number</Label>
-                    </div>
-                    <Input
-                      id="phone"
-                      {...form.register("phone", { required: true })}
-                      className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
-                      placeholder="+91 98765 43210"
-                      type="tel"
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={cn(
-                      "w-full bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
-                      "text-sm font-medium h-9 rounded-lg",
-                      "transition-all duration-300",
-                      "flex items-center justify-center",
-                      isSubmitting && "opacity-70"
-                    )}
-                  >
-                    {isSubmitting ? "Submitting..." : "Request Demo Call"}
-                  </Button>
-                </form>
-              </motion.div>
-            </div>
+                  <Input
+                    id="phone"
+                    {...form.register("phone", { required: true })}
+                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30"
+                    placeholder="+91 98765 43210"
+                    type="tel"
+                  />
+                </div>
+                
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={cn(
+                    "w-full bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
+                    "text-sm font-medium h-9 rounded-lg",
+                    "transition-all duration-300",
+                    "flex items-center justify-center",
+                    isSubmitting && "opacity-70"
+                  )}
+                >
+                  {isSubmitting ? "Submitting..." : "Request Demo Call"}
+                </Button>
+              </form>
+            </motion.div>
           </motion.div>
         </div>
         

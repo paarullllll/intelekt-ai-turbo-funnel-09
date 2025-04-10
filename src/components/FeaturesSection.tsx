@@ -1,114 +1,159 @@
 
 import React from 'react';
+import { Button } from "@/components/ui/button";
 import { 
-  MessageSquare, 
+  Clock, 
+  Target, 
+  BarChart, 
+  ShieldCheck, 
   FileText, 
-  Play, 
-  Users, 
-  Database, 
-  BarChart,
-  Mic,
-  Video,
-  Zap,
-  Scale
+  BrainCircuit, 
+  Phone, 
+  Users,
+  MessagesSquare
 } from "lucide-react";
+import { motion } from 'framer-motion';
+import { cn } from "@/lib/utils";
+
+// Feature card component
+const FeatureCard = ({ 
+  title, 
+  description, 
+  icon: Icon, 
+  delay = 0, 
+  className 
+}: { 
+  title: string; 
+  description: string; 
+  icon: React.ElementType; 
+  delay?: number; 
+  className?: string; 
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: 0.1 + delay * 0.1 }}
+      className={cn(
+        "bg-gradient-to-br from-intelekt-primary/90 to-intelekt-primary/50 backdrop-blur-sm",
+        "border border-white/10 rounded-xl p-6 h-full",
+        "hover:border-intelekt-accent/30 hover:shadow-lg hover:-translate-y-1",
+        "transition-all duration-300 ease-out",
+        className
+      )}
+    >
+      <div className="bg-intelekt-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-5">
+        <Icon className="h-6 w-6 text-intelekt-accent" />
+      </div>
+      <h3 className="text-lg font-semibold text-white mb-3">{title}</h3>
+      <p className="text-white/70 text-sm leading-relaxed">{description}</p>
+    </motion.div>
+  );
+};
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-20 bg-gradient-to-b from-intelekt-background to-intelekt-primary/90 relative">
+    <section id="features" className="py-16 md:py-20 lg:py-24 bg-intelekt-background relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-intelekt-accent/5 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-intelekt-accent/5 blur-3xl"></div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block px-3 py-1 rounded-full bg-intelekt-accent/10 border border-intelekt-accent/20 text-sm text-white/80 mb-4">
-            Platform Capabilities
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            What Makes Intelekt AI Unstoppable for Lending
-          </h2>
-          <p className="text-lg text-white/80 max-w-3xl mx-auto">
-            Intelekt AI isn't just a bot — it's a full-stack agentic platform built for lending. Here's what powers it:
-          </p>
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-bold text-gradient mb-4"
+          >
+            Works without bias, fatigue and errors
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-white/70 text-lg leading-relaxed"
+          >
+            Ready to use agentic AI platform for lending teams to disburse faster
+          </motion.p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 animate-fade-in animation-delay-100 transform hover:scale-105 hover:shadow-lg">
-            <div className="flex items-start gap-5">
-              <div className="bg-intelekt-accent/10 h-12 w-12 rounded-xl flex items-center justify-center mb-4">
-                <Mic className="h-6 w-6 text-intelekt-cta" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                  <span>Voice & Video Intelligence</span>
-                </h3>
-                <p className="text-white/80 leading-relaxed">
-                  AI agents engage with customers using human-like speech and guide them through onboarding or product discovery — no typing or app switching required.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 animate-fade-in animation-delay-200 transform hover:scale-105 hover:shadow-lg">
-            <div className="flex items-start gap-5">
-              <div className="bg-intelekt-accent/10 h-12 w-12 rounded-xl flex items-center justify-center mb-4">
-                <Database className="h-6 w-6 text-intelekt-cta" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                  <span>Customizable Agent Behavior</span>
-                </h3>
-                <p className="text-white/80 leading-relaxed">
-                  Define your own rules, product logic, language tone, and follow-up sequences. Our no-code setup makes changes frictionless.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 animate-fade-in animation-delay-300 transform hover:scale-105 hover:shadow-lg">
-            <div className="flex items-start gap-5">
-              <div className="bg-intelekt-accent/10 h-12 w-12 rounded-xl flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-intelekt-cta" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                  <span>Inbound & Outbound Call Handling</span>
-                </h3>
-                <p className="text-white/80 leading-relaxed">
-                  Intelekt AI handles customer calls 24/7 — whether it's a support question, an interest in a product, or a follow-up nudge.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 animate-fade-in animation-delay-400 transform hover:scale-105 hover:shadow-lg">
-            <div className="flex items-start gap-5">
-              <div className="bg-intelekt-accent/10 h-12 w-12 rounded-xl flex items-center justify-center mb-4">
-                <FileText className="h-6 w-6 text-intelekt-cta" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                  <span>AI Insights & Call Summaries</span>
-                </h3>
-                <p className="text-white/80 leading-relaxed">
-                  Every interaction is recorded, transcribed, and summarized with key highlights. Data is auto-synced to your CRM for instant team visibility.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 animate-fade-in animation-delay-500 transform hover:scale-105 hover:shadow-lg md:col-span-2">
-            <div className="flex items-start gap-5">
-              <div className="bg-intelekt-accent/10 h-12 w-12 rounded-xl flex items-center justify-center mb-4">
-                <Scale className="h-6 w-6 text-intelekt-cta" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-3 flex items-center gap-2">
-                  <span>Built to Scale</span>
-                </h3>
-                <p className="text-white/80 leading-relaxed">
-                  From 1 to 1,000 AI agents — ramp instantly without ops overhead. Works out of the box with CRMs, LOS, LMS, and on-prem/cloud systems.
-                </p>
-              </div>
-            </div>
-          </div>
+        {/* Feature grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <FeatureCard
+            title="Real-time loan qualification"
+            description="Process 1,000+ leads in minutes with AI voice agents that conduct initial qualification calls as effectively as your best agents."
+            icon={Clock}
+            delay={0}
+          />
+          <FeatureCard
+            title="Document verification at scale"
+            description="Automate document verification with AI that can follow up on missing or incorrect documents, reducing the time to completion."
+            icon={FileText}
+            delay={1}
+          />
+          <FeatureCard
+            title="Multilingual support"
+            description="Connect with customers in their preferred language across Hindi, English, Tamil, Telugu, Kannada, Malayalam, and more."
+            icon={MessagesSquare}
+            delay={2}
+          />
+          <FeatureCard
+            title="Intelligent follow-ups"
+            description="Never lose a lead due to poor follow-up. Our agents automatically call back at the optimal time to maximize conversion."
+            icon={Target}
+            delay={3}
+          />
+          <FeatureCard
+            title="Performance analytics"
+            description="Gain insights into your loan funnel with detailed analytics on qualification rates, conversion rates, and more."
+            icon={BarChart}
+            delay={4}
+          />
+          <FeatureCard
+            title="Compliance built-in"
+            description="All calls are recorded, transcribed, and analyzed for compliance with lending regulations and internal policies."
+            icon={ShieldCheck}
+            delay={5}
+          />
+          <FeatureCard
+            title="AI-driven insights"
+            description="Identify patterns in customer behavior and preferences to optimize your lending strategy and products."
+            icon={BrainCircuit}
+            delay={6}
+            className="lg:col-span-1"
+          />
+          <FeatureCard
+            title="Voice and WhatsApp channels"
+            description="Meet customers where they are, with seamless transitions between voice calls, WhatsApp, and other channels."
+            icon={Phone}
+            delay={7}
+            className="lg:col-span-1"
+          />
+          <FeatureCard
+            title="Handoff to human agents"
+            description="Seamlessly transfer complex cases to human agents with full context and history of the conversation."
+            icon={Users}
+            delay={8}
+            className="lg:col-span-1"
+          />
+        </div>
+        
+        {/* CTA section */}
+        <div className="mt-16 md:mt-20 text-center">
+          <Button 
+            className={cn(
+              "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
+              "text-lg px-8 py-6 font-medium rounded-xl",
+              "transition-all duration-300 shadow-lg",
+              "hover:shadow-intelekt-cta/20 hover:shadow-xl transform hover:-translate-y-1"
+            )}
+          >
+            Schedule a Demo
+          </Button>
         </div>
       </div>
     </section>

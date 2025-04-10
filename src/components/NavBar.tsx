@@ -44,9 +44,7 @@ const NavBar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="/" className="flex items-center group">
-              <span className="text-2xl font-bold text-white tracking-tight group-hover:opacity-90 transition-opacity">
-                intelekt<span className="text-intelekt-accent">AI</span>
-              </span>
+              <img src="/lovable-uploads/3ef42f29-a1d2-4d00-aff5-bfd80740e0b4.png" alt="Intelekt AI" className="h-8 mr-2" />
             </a>
           </div>
           
@@ -57,18 +55,6 @@ const NavBar = () => {
               className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
             >
               Features
-            </button>
-            <button 
-              onClick={() => scrollToSection('case-study')} 
-              className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
-            >
-              Case Study
-            </button>
-            <button 
-              onClick={() => scrollToSection('architecture')} 
-              className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
-            >
-              Architecture
             </button>
           </div>
           
@@ -107,18 +93,6 @@ const NavBar = () => {
               className="text-white/90 hover:text-white py-3 px-4 rounded-lg hover:bg-white/5 transition-colors text-left"
             >
               Features
-            </button>
-            <button 
-              onClick={() => scrollToSection('case-study')} 
-              className="text-white/90 hover:text-white py-3 px-4 rounded-lg hover:bg-white/5 transition-colors text-left"
-            >
-              Case Study
-            </button>
-            <button 
-              onClick={() => scrollToSection('architecture')} 
-              className="text-white/90 hover:text-white py-3 px-4 rounded-lg hover:bg-white/5 transition-colors text-left"
-            >
-              Architecture
             </button>
             <div className="pt-2">
               <Button 
