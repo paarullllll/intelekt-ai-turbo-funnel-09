@@ -93,6 +93,12 @@ const NavBar = () => {
                 "rounded-lg transition-all duration-300 shadow-lg",
                 "hover:shadow-intelekt-cta/20 hover:shadow-xl transform hover:-translate-y-0.5"
               )}
+              onClick={() =>
+                window.open(
+                  "https://calendly.com/getintelekt-sales/30min",
+                  "_blank"
+                )
+              }
             >
               Book a Demo
             </Button>
@@ -122,6 +128,12 @@ const NavBar = () => {
                   "rounded-lg transition-all duration-200 shadow-lg py-6",
                   "hover:shadow-intelekt-cta/20 hover:shadow-xl"
                 )}
+                onClick={() =>
+                  window.open(
+                    "https://calendly.com/getintelekt-sales/30min",
+                    "_blank"
+                  )
+                }
               >
                 Book a Demo
               </Button>

@@ -1,33 +1,32 @@
-
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { 
-  Clock, 
-  Target, 
-  BarChart, 
-  ShieldCheck, 
-  FileText, 
-  BrainCircuit, 
-  Phone, 
+import {
+  Clock,
+  Target,
+  BarChart,
+  ShieldCheck,
+  FileText,
+  BrainCircuit,
+  Phone,
   Users,
-  MessagesSquare
+  MessagesSquare,
 } from "lucide-react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // Feature card component
-const FeatureCard = ({ 
-  title, 
-  description, 
-  icon: Icon, 
-  delay = 0, 
-  className 
-}: { 
-  title: string; 
-  description: string; 
-  icon: React.ElementType; 
-  delay?: number; 
-  className?: string; 
+const FeatureCard = ({
+  title,
+  description,
+  icon: Icon,
+  delay = 0,
+  className,
+}: {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  delay?: number;
+  className?: string;
 }) => {
   return (
     <motion.div
@@ -54,14 +53,17 @@ const FeatureCard = ({
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-16 md:py-20 lg:py-24 bg-intelekt-background relative overflow-hidden">
+    <section
+      id="features"
+      className="py-16 md:py-20 lg:py-24 bg-intelekt-background relative overflow-hidden"
+    >
       {/* Decorative elements */}
       <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-intelekt-accent/5 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-intelekt-accent/5 blur-3xl"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -70,17 +72,18 @@ const FeaturesSection = () => {
           >
             Works without bias, fatigue and errors
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-white/70 text-lg leading-relaxed"
           >
-            Ready to use agentic AI platform for lending teams to disburse faster
+            Ready to use agentic AI platform for lending teams to disburse
+            faster
           </motion.p>
         </div>
-        
+
         {/* Feature grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <FeatureCard
@@ -141,16 +144,22 @@ const FeaturesSection = () => {
             className="lg:col-span-1"
           />
         </div>
-        
+
         {/* CTA section */}
         <div className="mt-16 md:mt-20 text-center">
-          <Button 
+          <Button
             className={cn(
               "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
               "text-lg px-8 py-6 font-medium rounded-xl",
               "transition-all duration-300 shadow-lg",
               "hover:shadow-intelekt-cta/20 hover:shadow-xl transform hover:-translate-y-1"
             )}
+            onClick={() =>
+              window.open(
+                "https://calendly.com/getintelekt-sales/30min",
+                "_blank"
+              )
+            }
           >
             Schedule a Demo
           </Button>

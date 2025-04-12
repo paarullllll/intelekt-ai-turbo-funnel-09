@@ -140,7 +140,8 @@ const IvrEvolutionSection = () => {
                   className={cn(
                     "bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 backdrop-blur-sm",
                     "border border-white/10 rounded-xl p-6",
-                    "hover:border-white/20 transition-all duration-300"
+                    "hover:border-white/20 transition-all duration-300",
+                    "h-full"
                   )}
                 >
                   <h3 className="text-lg font-semibold text-white mb-1">
@@ -177,7 +178,7 @@ const IvrEvolutionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-intelekt-primary/60 to-intelekt-primary/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8"
+          className="max-w-4xl mx-auto text-center bg-gradient-to-br from-intelekt-primary/60 to-intelekt-primary/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 hidden"
         >
           <p className="text-lg text-intelekt-cta font-medium">
             This progression shows the shift from rigid, menu-based interactions

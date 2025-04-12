@@ -42,7 +42,7 @@ const metrics = [
     icon: CheckCircle,
   },
   {
-    value: "3 days",
+    value: "1 day",
     label: "Deployment Time",
     description: "From contract signing to production launch",
     icon: Zap,

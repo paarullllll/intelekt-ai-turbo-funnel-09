@@ -63,6 +63,12 @@ const CtaSection = () => {
                       "transition-all duration-300 shadow-lg group",
                       "hover:shadow-intelekt-cta/20 hover:shadow-xl"
                     )}
+                    onClick={() =>
+                      window.open(
+                        "https://calendly.com/getintelekt-sales/30min",
+                        "_blank"
+                      )
+                    }
                   >
                     Talk to Our Team
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -106,6 +112,12 @@ const CtaSection = () => {
                       "rounded-lg transition-all duration-200 px-6",
                       "hover:border-white/30 group"
                     )}
+                    onClick={() =>
+                      window.open(
+                        "https://calendly.com/getintelekt-sales/30min",
+                        "_blank"
+                      )
+                    }
                   >
                     Schedule Now
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
