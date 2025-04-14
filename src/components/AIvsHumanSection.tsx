@@ -62,7 +62,7 @@ const AIvsHumanSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-intelekt-background to-intelekt-primary/80 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-intelekt-background to-intelekt-primary/80 relative overflow-hidden" id='ai-vs-human'>
       {/* Background accent */}
       <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-intelekt-accent/5 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-intelekt-cta/5 blur-3xl"></div>
@@ -87,41 +87,7 @@ const AIvsHumanSection = () => {
         </motion.div>
         
         {/* Key Benefits */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white">
-              With <span className="text-intelekt-cta">Intelekt AI</span> they find & disburse to qualified borrowers,<br/>
-              at 1/10th the cost <span className="text-intelekt-accent">in minutes, not months</span>
-            </h3>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {keyBenefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-intelekt-primary/50 border border-white/10 rounded-xl p-6 hover:border-intelekt-cta/30 transition-all duration-300"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="bg-intelekt-accent/10 w-10 h-10 rounded-lg flex items-center justify-center mr-4">
-                    <benefit.icon className="h-5 w-5 text-intelekt-accent" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-white">{benefit.title}</h4>
-                </div>
-                <p className="text-sm text-white/70">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+    
         
         {/* Comparison Table */}
         <motion.div

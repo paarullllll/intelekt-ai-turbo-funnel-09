@@ -1,14 +1,14 @@
-
-import React from 'react';
-import NavBar from '@/components/NavBar';
-import HeroSection from '@/components/HeroSection';
-import CaseStudySection from '@/components/CaseStudySection';
-import FeaturesSection from '@/components/FeaturesSection';
-import IvrEvolutionSection from '@/components/IvrEvolutionSection';
-import AIvsHumanSection from '@/components/AIvsHumanSection';
-import OutcomeMetricsSection from '@/components/OutcomeMetricsSection';
-import CtaSection from '@/components/CtaSection';
-import Footer from '@/components/Footer';
+import React from "react";
+import NavBar from "@/components/NavBar";
+import HeroSection from "@/components/HeroSection";
+import CaseStudySection from "@/components/CaseStudySection";
+import FeaturesSection from "@/components/FeaturesSection";
+import IvrEvolutionSection from "@/components/IvrEvolutionSection";
+import AIvsHumanSection from "@/components/AIvsHumanSection";
+import OutcomeMetricsSection from "@/components/OutcomeMetricsSection";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
+import EvolutionJourney from "@/components/EvolutionJourney";
 
 const Index = () => {
   return (
@@ -19,7 +19,8 @@ const Index = () => {
         <CaseStudySection />
         <FeaturesSection />
         <OutcomeMetricsSection />
-        <IvrEvolutionSection />
+        {/* <IvrEvolutionSection /> */}
+        <EvolutionJourney />
         <AIvsHumanSection />
         <CtaSection />
       </main>
