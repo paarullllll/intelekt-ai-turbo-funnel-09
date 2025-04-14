@@ -2,39 +2,52 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 import { cn } from "@/lib/utils";
 import { Play, ChevronDown, Phone, User } from "lucide-react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { toast } from "@/hooks/use-toast";
+import { countryCode } from "@/data/country";
 
 type FormValues = {
   name: string;
   phoneNo: string;
+  country: string;
 };
 
 const HeroSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<FormValues>({
-    defaultValues: {
-      name: "",
-      phoneNo: "",
-    },
+  const [data, setData] = useState<FormValues>({
+    name: "",
+    phoneNo: "",
+    country: "+91",
   });
 
   const onSubmit = (data: FormValues) => {
     setIsSubmitting(true);
 
-    console.log(data);
+    const phoneNo = data.country + data.phoneNo;
+
+    console.log(data, phoneNo);
 
     const postData = {
       ...data,
-      callProjectId: "8a7cb98a-37f9-462d-89cc-44a7ca814a07",
+      phoneNo: phoneNo,
+      callProjectId: "7a9c36d3-c5ac-4eae-baf5-af17e56a0aaf",
     };
 
     // TODO: Validate phone number
-    if (!/^\+\d{10,14}$/.test(data.phoneNo)) {
+    if (!/^\+\d{10,14}$/.test(phoneNo)) {
       toast({
         title: "Error",
         description: "Invalid phone number format.",
@@ -68,8 +81,12 @@ const HeroSection = () => {
             title: "Call Requested",
             description: `Thanks ${postData.name}, we'll call you at ${postData.phoneNo} shortly.`,
           });
-          form.reset();
           setIsSubmitting(false);
+          setData({
+            name: "",
+            phoneNo: "",
+            country: "+91",
+          });
         }
       })
       .catch((err) => {
@@ -78,7 +95,6 @@ const HeroSection = () => {
           title: "Error",
           description: "Something went wrong, please try again later.",
         });
-        form.reset();
         setIsSubmitting(false);
       });
   };
@@ -112,7 +128,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-20 md:pt-28 lg:pt-32 pb-10 md:pb-0 overflow-hidden">
+    <section
+      className="relative pt-20 md:pt-28 lg:pt-32 pb-10 md:pb-0 overflow-hidden"
+      id="hero-section"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-intelekt-primary via-intelekt-primary to-intelekt-background z-0"></div>
 
@@ -137,17 +156,17 @@ const HeroSection = () => {
           >
             <motion.div
               variants={fadeInUp}
-              className="inline-block px-6 py-3 rounded-full bg-intelekt-accent/20 border border-intelekt-accent/30 text-xl font-medium text-white mb-2 transform transition-transform hover:scale-105"
+              className="inline-block md:px-6 md:py-3 px-4 py-2 rounded-full bg-intelekt-accent/20 border border-intelekt-accent/30 md:text-xl text-sm font-medium text-white mb-2 transform transition-transform hover:scale-105"
             >
-              Deployed in a day, results in 7.
+              Deployed in a day, results in 7
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
               className="text-3xl md:text-[42px] font-bold leading-tight text-gradient tracking-normal"
             >
-              How Rupeeq increased their MQL to SQL conversions by 80% using
-              Intelekt AI Voice Agents
+              How a leading NBFC increased their MQL to SQL conversions by 80%
+              using Intelekt AI voice agents
             </motion.h1>
 
             <motion.div
@@ -197,62 +216,73 @@ const HeroSection = () => {
               <p className="text-sm text-white/70 mb-4">
                 Trusted by digital-first lenders across India
               </p>
-              <div className="flex flex-wrap gap-6 md:gap-8 items-center">
+              <div className="flex flex-wrap gap-3 md:gap-5 items-center">
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="h-9 w-28 flex items-center rounded-[4px]"
-                >
-                  <img
-                    src="/assets/image-1.png"
-                    alt="Image 1"
-                    className="rounded-[4px] grayscale"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="h-9 w-28 flex items-center rounded-[4px]"
-                >
-                  <img
-                    src="/assets/image-2.png"
-                    alt="Image 2"
-                    className="rounded-[4px] grayscale"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="h-9 w-28 flex items-center rounded-[4px]"
-                >
-                  <img
-                    src="/assets/image-3.png"
-                    alt="Image 3"
-                    className="rounded-[4px] grayscale"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="h-9 w-28 flex items-center rounded-[4px]"
-                >
-                  <img
-                    src="/assets/image-4.png"
-                    alt="Image 4"
-                    className="rounded-[4px] grayscale"
-                  />
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  // whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="h-9 w-28 flex items-center rounded-md"
                 >
                   <img
                     src="/assets/image.png"
                     alt="Image 5"
-                    className="rounded-[4px] grayscale"
+                    className="rounded-[4px] opacity-45"
                   />
                 </motion.div>
+                <motion.div
+                  // whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="h-9 w-28 flex items-center rounded-[4px]"
+                >
+                  <img
+                    src="/assets/image-4.png"
+                    alt="Image 4"
+                    className="rounded-[4px] opacity-45"
+                  />
+                </motion.div>
+                <motion.div
+                  // whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="h-9 w-28 flex items-center rounded-[4px]"
+                >
+                  <img
+                    src="/assets/image-1.png"
+                    alt="Image 1"
+                    className="rounded-[4px] opacity-45"
+                  />
+                </motion.div>
+                <motion.div
+                  // whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="h-9 w-28 flex items-center rounded-[4px]"
+                >
+                  <img
+                    src="/assets/image-2.png"
+                    alt="Image 2"
+                    className="rounded-[4px] opacity-45"
+                  />
+                </motion.div>
+                <motion.div
+                  // whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="h-9 w-28 flex items-center rounded-[4px]"
+                >
+                  <img
+                    src="/assets/image-3.png"
+                    alt="Image 3"
+                    className="rounded-[4px] opacity-45"
+                  />
+                </motion.div>
+
+                {/* <motion.div
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  className="h-9 w-28 flex items-center rounded-md"
+                >
+                  <img
+                    src="/assets/image-5.png"
+                    alt="Image 5"
+                    className="rounded-[4px] h-full opacity-45"
+                  />
+                </motion.div> */}
               </div>
             </motion.div>
           </motion.div>
@@ -273,15 +303,15 @@ const HeroSection = () => {
                   "0 10px 30px rgba(18, 33, 170, 0.2)",
                 ],
               }}
-              transition={{
-                repeat: Infinity,
-                duration: 6,
-                ease: "easeInOut",
-              }}
+              // transition={{
+              //   repeat: Infinity,
+              //   duration: 6,
+              //   ease: "easeInOut",
+              // }}
               className="bg-gradient-to-br from-intelekt-primary/80 to-intelekt-primary/40 
                       backdrop-blur-md border border-white/10 rounded-xl py-6 px-8 
                       hover:shadow-intelekt-cta/20 transform hover:-translate-y-1 transition-all duration-300
-                      w-full max-w-sm"
+                      w-full"
             >
               <div className="mb-4">
                 <h3 className="text-xl font-semibold text-white mb-2">
@@ -290,10 +320,7 @@ const HeroSection = () => {
                 <div className="w-full h-0.5 bg-gradient-to-r from-intelekt-accent/50 to-intelekt-cta/50"></div>
               </div>
 
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
+              <form className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <User className="h-4 w-4 text-intelekt-cta mr-2" />
@@ -303,7 +330,10 @@ const HeroSection = () => {
                   </div>
                   <Input
                     id="name"
-                    {...form.register("name", { required: true })}
+                    value={data.name}
+                    onChange={(e) => {
+                      setData((prev) => ({ ...prev, name: e.target.value }));
+                    }}
                     className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30 h-12"
                     placeholder="John Doe"
                     disabled={isSubmitting}
@@ -317,14 +347,55 @@ const HeroSection = () => {
                       Phone Number
                     </Label>
                   </div>
-                  <Input
-                    id="phone"
-                    {...form.register("phoneNo", { required: true })}
-                    className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30 h-12"
-                    placeholder="+91 98765 43210"
-                    type="tel"
-                    disabled={isSubmitting}
-                  />
+                  <div className="flex gap-2">
+                    <div className="w-2/5">
+                      <Select
+                        defaultValue="+91"
+                        value={data.country}
+                        onValueChange={(value) => {
+                          setData((prev) => ({ ...prev, country: value }));
+                        }}
+                      >
+                        <SelectTrigger className="w-full bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30 h-12">
+                          <SelectValue placeholder="Select a code" />
+
+                          <SelectContent className="">
+                            <SelectContent className="">
+                              {countryCode
+                                // filter only unique dial codes
+                                .filter(
+                                  (country, i) =>
+                                    countryCode.findIndex(
+                                      (c) => c.dial_code === country.dial_code
+                                    ) === i
+                                )
+                                .map((country, i) => (
+                                  <SelectItem value={country.dial_code} key={i}>
+                                    {country.dial_code} - {country.name}
+                                  </SelectItem>
+                                ))}
+                            </SelectContent>
+                          </SelectContent>
+                        </SelectTrigger>
+                      </Select>
+                    </div>
+                    <div className="w-3/5">
+                      <Input
+                        id="phone"
+                        value={data.phoneNo}
+                        onChange={(e) => {
+                          setData((prev) => ({
+                            ...prev,
+                            phoneNo: e.target.value,
+                          }));
+                        }}
+                        className="bg-white/5 border-white/10 text-white placeholder:text-white/50 focus:border-intelekt-cta/50 focus:ring-intelekt-cta/30 h-12"
+                        placeholder="9876543210"
+                        type="tel"
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                  </div>
                 </div>
 
                 <Button
@@ -337,6 +408,7 @@ const HeroSection = () => {
                     "flex items-center justify-center h-12",
                     isSubmitting && "opacity-70"
                   )}
+                  onClick={() => onSubmit(data)}
                 >
                   {isSubmitting ? "Calling..." : "Request Demo Call"}
                 </Button>

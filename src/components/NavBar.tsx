@@ -38,7 +38,7 @@ const NavBar = () => {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-intelekt-primary/95 backdrop-blur-md border-b border-white/10 py-2"
-          : "bg-transparent py-4"
+          : "bg-transparent py-4 "
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,19 +108,33 @@ const NavBar = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "md:hidden absolute left-0 right-0 px-4 pt-2 pb-4 bg-intelekt-primary/98 backdrop-blur-lg border-b border-white/10 shadow-lg transition-all duration-300 ease-in-out",
+            "md:hidden absolute left-0 right-0 px-4 pt-2 pb-4 bg-intelekt-primary/98 backdrop-blur-lg border-b border-white/10 shadow-lg transition-all duration-300 ease-in-out bg-[#000315]",
             mobileMenuOpen
-              ? "top-full opacity-100"
+              ? "top-full opacity-100 h-screen"
               : "-top-96 opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-4">
-            <button
-              onClick={() => scrollToSection("features")}
-              className="text-white/90 hover:text-white py-3 px-4 rounded-lg hover:bg-white/5 transition-colors text-left"
-            >
-              Features
-            </button>
+          <div className="flex flex-col space-y-4 justify-between h-[90%]">
+            <div className="flex flex-col space-y-8">
+              <button
+                onClick={() => scrollToSection("features")}
+                className="text-white/90 hover:text-white py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+              >
+                Features
+              </button>
+              <button
+                onClick={() => scrollToSection("features")}
+                className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
+              >
+                IVR to AI Agents
+              </button>
+              <button
+                onClick={() => scrollToSection("features")}
+                className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
+              >
+                Human VS AI Agents
+              </button>
+            </div>
             <div className="pt-2">
               <Button
                 className={cn(

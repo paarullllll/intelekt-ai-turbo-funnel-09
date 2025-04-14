@@ -69,11 +69,11 @@ const OutcomeMetricsSection = () => {
             Results That Matter
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            With <span className="text-intelekt-cta">Intelekt AI</span>&nbsp;
-            find & disburse to qualified
+            With <span className="">Intelekt AI</span>&nbsp; find & disburse to
+            qualified
             <br />
             borrowers, at 1/10th the cost{" "}
-            <span className="text-intelekt-accent">in minutes, not months</span>
+            <span className="text-intelekt-cta">in minutes, not months</span>
           </h2>
         </motion.div>
 

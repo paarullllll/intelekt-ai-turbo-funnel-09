@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Calendar } from "lucide-react";
@@ -48,32 +47,28 @@ const CtaSection = () => {
               </motion.h2>
 
               <div className="flex flex-col sm:flex-row justify-center gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                >
-                  <Button
-                    size="custom"
-                    className={cn(
-                      "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
-                      "text-lg px-8 font-medium rounded-xl",
-                      "transition-all duration-300 shadow-lg group",
-                      "hover:shadow-intelekt-cta/20 hover:shadow-xl"
-                    )}
-                    onClick={() =>
-                      window.open(
-                        "https://calendly.com/getintelekt-sales/30min",
-                        "_blank"
-                      )
-                    }
+                <a href="#hero-section">
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
                   >
-                    Talk to Our Team
-                    <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </motion.div>
+                    <Button
+                      size="custom"
+                      className={cn(
+                        "bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
+                        "text-lg px-8 font-medium rounded-xl",
+                        "transition-all duration-300 shadow-lg group",
+                        "hover:shadow-intelekt-cta/20 hover:shadow-xl"
+                      )}
+                    >
+                      Talk to our AI agent
+                      <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </motion.div>
+                </a>
               </div>
             </div>
 

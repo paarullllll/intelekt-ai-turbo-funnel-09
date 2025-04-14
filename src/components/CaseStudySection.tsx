@@ -12,7 +12,7 @@ import {
 
 const CaseStudySection = () => {
   // Define a company name state that could be updated later if needed
-  const [companyName] = useState("Rupeeq");
+  const [companyName] = useState("Leading NBFC");
 
   return (
     <section
@@ -35,14 +35,14 @@ const CaseStudySection = () => {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-white mb-3">
-                  About {companyName}
+                  About
                 </h3>
                 <p className="text-white/80 leading-relaxed">
-                  {companyName} is a fast-growing DSA focused on personal and
-                  business loans. With a strong marketing engine generating high
-                  volumes of leads every month, the company's challenge was to
-                  convert high lead volumes into qualified opportunities quickly
-                  and efficiently.
+                  A fast-growing DSA focused on personal and business loans.
+                  With a strong marketing engine generating high volumes of
+                  leads every month, the company's challenge was to convert high
+                  lead volumes into qualified opportunities quickly and
+                  efficiently.
                 </p>
               </div>
             </div>
@@ -129,28 +129,29 @@ const CaseStudySection = () => {
                 <div className="bg-intelekt-primary/50 p-6 rounded-lg border border-white/5 h-fit">
                   <div className="text-white/90">
                     <div className="mb-4 w-full">
-                      <div className="text-lg font-medium mb-2">
+                      <div className="text-xl font-medium mb-2">
                         Before Intelekt AI
                       </div>
                       <div className="flex text-sm w-full justify-between">
                         <div className="flex w-full justify-between">
                           <div className="flex w-full gap-2 items-center">
-                            <div
-                              className="bg-red-500/60 rounded-full h-3 w-3"
-                              
-                            ></div>
-                            <span>MQL to SQL Conversion</span>
+                            <div className="bg-[#e64545] rounded-full h-3 w-3"></div>
+                            <span className="text-lg">
+                              MQL to SQL Conversion
+                            </span>
                           </div>
-                          <span>2%</span>
                         </div>
                       </div>
                     </div>
 
+                    <span className="text-4xl text-[#e64545] font-semibold">
+                      2%
+                    </span>
                     <div className="flex justify-center my-4">
                       <div className="border-t border-white/10 w-full"></div>
                     </div>
 
-                    <div className="text-sm text-white/70 italic">
+                    <div className="text-md text-white/70 italic">
                       "Our manual process was causing us to lose qualified
                       prospects to competitors who could move faster."
                     </div>
@@ -236,7 +237,7 @@ const CaseStudySection = () => {
                   <div className="bg-intelekt-primary/50 p-6 rounded-lg border border-white/5">
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
-                        <div className="h-3 w-3 rounded-full bg-intelekt-accent mr-2"></div>
+                        <div className="h-3 min-w-3 rounded-full bg-intelekt-accent mr-2"></div>
                         <div className="text-white/90 font-medium">
                           AI Voice Agents for Customer Interaction
                         </div>
@@ -263,7 +264,7 @@ const CaseStudySection = () => {
 
                     <div className="bg-intelekt-primary/60 p-4 rounded-lg mb-4 border border-white/5">
                       <div className="flex items-center mb-3">
-                        <div className="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                        <div className="h-3 min-w-3 rounded-full bg-green-500 mr-2"></div>
                         <div className="text-white/90 font-medium">
                           Real-Time Document Verification
                         </div>
@@ -423,9 +424,7 @@ const CaseStudySection = () => {
           {/* Testimonial */}
           <div className="bg-gradient-to-br from-intelekt-primary/50 to-intelekt-primary/30 backdrop-blur-sm border border-white/10 rounded-xl p-6 md:p-8 max-w-3xl mx-auto animate-fade-in animation-delay-800 shadow-lg hover:shadow-xl transition-all duration-300">
             <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-intelekt-accent to-intelekt-accent/70 flex items-center justify-center text-white text-xl md:text-2xl flex-shrink-0">
-                "
-              </div>
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-intelekt-accent to-intelekt-accent/70 flex items-center justify-center text-white text-xl md:text-2xl flex-shrink-0"></div>
               <div>
                 <p className="text-base md:text-lg text-white/90 italic mb-4 md:mb-5 leading-relaxed">
                   Intelekt AI helped us qualify leads at scale — faster than any
@@ -433,10 +432,10 @@ const CaseStudySection = () => {
                   dead ends.
                 </p>
                 <div className="border-t border-white/10 pt-4">
-                  <p className="font-semibold text-white">Rajiv Kumar</p>
-                  <p className="text-sm text-white/70">
+                  <p className="font-semibold text-white">CEO, Leading NBFC</p>
+                  {/* <p className="text-sm text-white/70">
                     Chief Digital Officer, {companyName}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
