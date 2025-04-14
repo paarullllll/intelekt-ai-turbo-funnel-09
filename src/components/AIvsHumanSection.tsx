@@ -62,7 +62,7 @@ const AIvsHumanSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-intelekt-background to-intelekt-primary/80 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-intelekt-background to-intelekt-primary/80 relative overflow-hidden" id='ai-vs-human'>
       {/* Background accent */}
       <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-intelekt-accent/5 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-intelekt-cta/5 blur-3xl"></div>

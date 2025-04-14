@@ -15,7 +15,7 @@ const Footer = () => {
               <img
                 src="/lovable-uploads/3ef42f29-a1d2-4d00-aff5-bfd80740e0b4.png"
                 alt="Intelekt AI"
-                className="h-6 mr-2"
+                className="h-6 mr-2 -ml-1"
               />
             </div>
             <p className="text-white/70 mb-4 max-w-xs text-xs">

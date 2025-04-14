@@ -399,7 +399,6 @@ const HeroSection = () => {
                 </div>
 
                 <Button
-                  type="submit"
                   disabled={isSubmitting}
                   className={cn(
                     "w-full bg-intelekt-cta hover:bg-intelekt-cta/90 text-intelekt-primary",
@@ -408,7 +407,10 @@ const HeroSection = () => {
                     "flex items-center justify-center h-12",
                     isSubmitting && "opacity-70"
                   )}
-                  onClick={() => onSubmit(data)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSubmit(data);
+                  }}
                 >
                   {isSubmitting ? "Calling..." : "Request Demo Call"}
                 </Button>

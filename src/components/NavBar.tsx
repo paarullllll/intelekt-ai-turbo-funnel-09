@@ -62,13 +62,13 @@ const NavBar = () => {
               Features
             </button>
             <button
-              onClick={() => scrollToSection("features")}
+              onClick={() => scrollToSection("ivr-to-ai")}
               className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
             >
               IVR to AI Agents
             </button>
             <button
-              onClick={() => scrollToSection("features")}
+              onClick={() => scrollToSection("ai-vs-human")}
               className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
             >
               Human VS AI Agents
@@ -114,7 +114,7 @@ const NavBar = () => {
               : "-top-96 opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-4 justify-between h-[90%]">
+          <div className="flex flex-col space-y-4 justify-between h-[80%]">
             <div className="flex flex-col space-y-8">
               <button
                 onClick={() => scrollToSection("features")}
@@ -123,13 +123,13 @@ const NavBar = () => {
                 Features
               </button>
               <button
-                onClick={() => scrollToSection("features")}
+                onClick={() => scrollToSection("ivr-to-ai")}
                 className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
               >
                 IVR to AI Agents
               </button>
               <button
-                onClick={() => scrollToSection("features")}
+                onClick={() => scrollToSection("ai-vs-human")}
                 className="text-white/80 hover:text-white transition-colors border-b-2 border-transparent hover:border-intelekt-accent/40 py-1"
               >
                 Human VS AI Agents
